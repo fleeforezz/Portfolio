@@ -55,12 +55,25 @@ section p {
     -moz-text-fill-color: transparent;
 }
 
-section a {
+.view-project {
     position: absolute;
     color: white;
     text-decoration: none;
     font-weight: 500;
     transform: translate(250px, 655px);
+}
+.view-project::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #2491d9;
+    transform-origin: left;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.view-project:hover::after {
+    transform: scaleX(1);
 }
 
 .Profile-img {
