@@ -60,6 +60,7 @@ section p {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    cursor: pointer;
     transform: translate(250px, 655px);
 }
 .view-project::after {
