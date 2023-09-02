@@ -1,109 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
     background-color: #10101A;
 }
 
-header {
-    position: absolute;
-    width: 30%;
-    padding: 1px 100px;
-    border: 0.5px solid rgb(156, 156, 156);
-    border-radius: 20px;
-    display: inline-flex;
-    flex-wrap: wrap;
-    transform: translate(600px, 20px);
-    background-color: #1D1E29;
-}
-
-header p {
-    position: static;
-    transform: translate(-45px, 0px);
-    color: rgb(192, 192, 192);
-    font-weight: 600;
-}
-
-header img {
-    position: absolute;
-    transform: translate(-75px, 15px);
-    width: 25px;
-    height: 25px;
-}
-
-section p {
-    font-size: 70px;
-    position: absolute;
-    transform: translate(250px, 200px);
+.main-title {
     color: white;
-    font-weight: 800;
 }
 
-.products {
-    background-image: linear-gradient(45deg, rgb(178, 146, 248), #2491d9);
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-}
-
-.view-project {
+.main-title h1 {
+    font-size: 9em;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
     position: absolute;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-    transform: translate(250px, 655px);
-}
-.view-project::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 100%;
-    background-color: #2491d9;
-    transform-origin: left;
-    transform: scale(0);
-    transition: transform 0.3s ease;
-}
-.view-project:hover::after {
-    transform: scaleX(1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.Profile-img {
+.blob {
     position: absolute;
-    transform: translate(1150px, 150px);
-    border-radius: 180px;
-    animation: profile 1s infinite alternate;
-}
-
-@keyframes profile {
-    50% {
-        margin-bottom: 10px;
-    }
-    100% {
-        margin-top: 10px;
-    }
-}
-
-.thumb1 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    transform: translate(-20px, -12px);
-    transform: rotate(20deg);
-}
-
-.thumb2 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    transform: translate(850px, 500px);
+    background-color: aliceblue;
+    padding: 100px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
 }
