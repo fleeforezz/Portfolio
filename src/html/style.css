@@ -1,33 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     margin: 0 auto;
-    background-color: #10101A;
+    font-family: Poppins;
+    background-color: #10031e;
 }
 
-.main-title {
-    color: white;
-}
-
-.main-title h1 {
-    font-size: 9em;
-    font-family: 'Dancing Script', cursive;
-    margin: 0;
+.navigation-parent {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    color: white;
+    left: 4%;
+}
+
+.navigation-child {
+    display: flex;
+    font-size: 1.2em;
+    gap: 2rem;
+}
+
+.navigation-child span {
+    color: violet;
+    font-size: 2em;
+}
+
+.links {
+    display: flex;
+    margin-top: 7.5%;
+    gap: 2rem;
+}
+
+.links p {
+    display: flex;
+    margin-top: 0%;
+    margin-left: -3%;
+    margin-right: -3%;
+}
+
+.links a {
+    text-decoration: none;
+    color: aliceblue;
+    border: none;
+    padding: 0.1rem 0.3rem;
+    position: relative;
+    transition: .5s ease;
+}
+
+.links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: .5s ease;
+}
+
+.links a:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+}
+
+.links a:hover::before {
+    width: 50%;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #ffc506;
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.links a:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
 }
 
 .blob {
     position: absolute;
-    background-color: aliceblue;
-    padding: 100px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    background-image: linear-gradient(to bottom left, #e92772, #f6515c);
+    padding: 225px;
+    border-radius: 33% 67% 43% 57% / 29% 30% 70% 71% ;
+    box-shadow: 0px 0px 250px #e92772;
+    top: 25%;
+    left: 60%;
+    z-index: -1;
+}
+
+.avatar img {
+    position: absolute;
+    width: 22%;
+    height: 60%;
+    top: -1%;
+    left: 61%;
+    z-index: 1;
+}
+
+.greeting-parent h1{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: aliceblue;
+    font-weight: 200;
+}
+
+.name {
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    background-image: linear-gradient(45deg, #e92772, #ec714c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.quick-review {
+    position: absolute;
+    color: azure;
+    top: 45%;
+    left: 12%;
+    font-size: 1.5em;
+}
+
+.button {
+    width: 10%;
+    height: 7.5%;
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 0px;
+    cursor: pointer;
+    outline: 0px;
+    padding: 0 2px;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 55%;
+    left: 12%;
+}
+
+.backdrop {
+    position: absolute;
+    width: 8%;
+    height: 6.7%;
+    background-color: rgb(36, 33, 228);
+    z-index: -1;
+    top: 55.4%;
+    left: 13%;
+    border-radius: 15px;
+    transition: all ease-in-out 0.5s;
+}
+
+.button:hover + .backdrop {
+    top: 59%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transform: rotate(-15deg)
+}
+
+.button:active,.button:active +.backdrop {
+    box-shadow: none;
 }
