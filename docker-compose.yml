@@ -5,5 +5,5 @@ services:
     ports:
       - "2000:80"
     volumes:
-      - ./code
+      - .:/code
     restart: unless-stopped
