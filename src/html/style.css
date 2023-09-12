@@ -11,6 +11,20 @@ body {
     height: 1000vh;
     scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
     /* background */
 .background {
     position: fixed;
@@ -151,7 +165,7 @@ body {
 .name {
     font-size: 4em;
     font-weight: 600;
-    background-image: linear-gradient(80deg, white, #805bd9, white);
+    background-image: linear-gradient(to bottom right, white, #805bd9, white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
