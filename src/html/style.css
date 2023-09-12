@@ -6,19 +6,23 @@
 }
 
 body {
-    margin: 0 auto;
+    margin: 0;
     font-family: Poppins;
     background-color: #10031e;
+    height: 100vh;
 }
 
 .navigation-parent {
-    position: absolute;
     color: white;
     left: 4%;
 }
 
 .navigation-child {
     display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    min-width: 50%;
+    margin-left: 5em;
     font-size: 1.2em;
     gap: 2rem;
 }
@@ -30,7 +34,7 @@ body {
 
 .links {
     display: flex;
-    margin-top: 7.5%;
+    margin-top: 41px;
     gap: 2rem;
 }
 
@@ -89,92 +93,50 @@ body {
 }
 
 .blob {
-    position: absolute;
-    background-image: linear-gradient(to bottom left, #e92772, #f6515c);
     padding: 225px;
+    background-image: linear-gradient(to bottom left, #e92772, #f6515c);
     border-radius: 33% 67% 43% 57% / 29% 30% 70% 71% ;
     box-shadow: 0px 0px 250px #e92772;
-    top: 25%;
-    left: 60%;
-    z-index: -1;
+    animation: 6s blob infinite alternate;
+}
+@keyframes blob {
+    0% {
+        border-radius: 57% 43% 70% 30% / 46% 50% 50% 54% ;
+    }
+    50% {
+        border-radius: 39% 61% 52% 48% / 28% 60% 40% 72% ;
+    }
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    }
 }
 
-.avatar img {
-    position: absolute;
-    width: 22%;
-    height: 60%;
-    top: -1%;
-    left: 61%;
-    z-index: 1;
+.greeting-parent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 65px;
 }
 
-.greeting-parent h1{
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    color: aliceblue;
-    font-weight: 200;
+.greeting-child {
+    margin: 0 auto;
+    width: 58%;
+    min-width: 45%;
+}
+
+.greeting-child h1 {
+    color: white;
+    font-weight: 300;
+}
+
+.quick-review {
+    color: white;
+    font-size: 1.5em;
 }
 
 .name {
-    position: absolute;
-    top: 30%;
-    left: 12%;
     background-image: linear-gradient(45deg, #e92772, #ec714c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 4em;
     font-weight: 600;
-}
-
-.quick-review {
-    position: absolute;
-    color: azure;
-    top: 45%;
-    left: 12%;
-    font-size: 1.5em;
-}
-
-.button {
-    width: 10%;
-    height: 7.5%;
-    border-radius: 15px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 0px;
-    cursor: pointer;
-    outline: 0px;
-    padding: 0 2px;
-    font-weight: 600;
-    font-size: 18px;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    top: 55%;
-    left: 12%;
-}
-
-.backdrop {
-    position: absolute;
-    width: 8%;
-    height: 6.7%;
-    background-color: rgb(36, 33, 228);
-    z-index: -1;
-    top: 55.4%;
-    left: 13%;
-    border-radius: 15px;
-    transition: all ease-in-out 0.5s;
-}
-
-.button:hover + .backdrop {
-    top: 59%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    transform: rotate(-15deg)
-}
-
-.button:active,.button:active +.backdrop {
-    box-shadow: none;
 }
