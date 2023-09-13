@@ -71,7 +71,6 @@ body {
 
     /* navigation-bar */
 .navigation-parent {
-    position: fixed;
     color: white;
     left: 2%;
 }
@@ -79,7 +78,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-width: 80%;
+    max-width: 70%;
     margin-left: 5em;
     font-size: 1.2em;
     gap: 2rem;
@@ -87,7 +86,6 @@ body {
 .intro {
     color: white;
     text-decoration: none;
-    margin-right: 50em;
 }
 .intro span {
     color: violet;
@@ -192,36 +190,13 @@ body {
     font-size: 1.3em;
 }
 
-/* .blob {
-    padding: 225px;
-    background-image: linear-gradient(to bottom left, #7953e8, #f6515c);
-    border-radius: 33% 67% 43% 57% / 29% 30% 70% 71% ;
-    filter: blur(50px);
-    box-shadow: 0px 0px 250px #7953e8;
-    transition: 500ms ease-out;
-    animation: 6s blob infinite alternate;
-    z-index: -1;
-}
-
-@keyframes blob {
-    0% {
-        border-radius: 57% 43% 70% 30% / 46% 50% 50% 54% ;
-    }
-    50% {
-        border-radius: 39% 61% 52% 48% / 28% 60% 40% 72% ;
-    }
-    100% {
-        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
-    }
-} */
-
 .blob:hover {
     padding: 250px;
     box-shadow: 0px 0px 250px #e65e92;
 }
 
     /* Scroll-down-button */
-.scroll-down-button {
+/* .scroll-down-button {
     position: absolute;
     height: 4em;
     width: 2.60em;
@@ -243,7 +218,7 @@ body {
     background-color: white;
     border-radius: 50%;
     animation: move-down 2s infinite;
-}
+} */
 @keyframes move-down {
     80% {
         opacity: 0.5;
@@ -252,4 +227,8 @@ body {
         transform: translateY(1em);
         opacity: 0;
     }
+}
+
+@media only screen and (min-width: 768px) {
+
 }
