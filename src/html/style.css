@@ -13,16 +13,18 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #1b1b1b;
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #bbbbbb;
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #dbdbdb;
 }
 
     /* background */
@@ -207,6 +209,12 @@ body {
         opacity: 0;
     }
 }
+
+
+
+
+
+
 
 @media only screen and (min-width: 768px) {
 
