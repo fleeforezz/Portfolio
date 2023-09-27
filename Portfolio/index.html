@@ -1,13 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./image/leave.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"/>
+    <title>Portfolio | Fleeforezz</title>
+</head>
+<body>
+
+    <header>
+        <div class="background">
+            <div class="planet-1"></div>
+            <div class="planet-2"></div>
+            <div class="planet-3"></div>
+        </div>
+        <!-- Navigation bar -->          
+        <div class="navigation-parent">
+            <div class="navigation-child">
+                <div class="links">
+                    <a href="index.html" class="intro">Portfolio <span>.</span> </a>
+                </div>
+                <div class="links">
+                    <a href="about_me.html" class="child" target="_blank">About me</a>
+                    <a href="#" class="child" target="_blank">Projects</a>
+                    <a href="#" class="child" target="_blank">Contact</a>
+                </div>
+            </div>
+        </div>
+        <!-- Greeting | Quick Review | Download CV -->
+        <div class="greeting-parent">
+            <div class="greeting-child">
+                <h1>Hello 👋 I'm</h1>
+                <p class="name">Nhat Truong</p>
+                <p class="quick-review">I'm a <span class="auto-type"></span></p>
+                <a href="./image/cv.pdf" download="Cv.pdf" class="cv">Download Cv</a>
+                <!-- <div class= id="scroll-down-button">
+                    <a href="#scroll-down-section" class="scroll-down-button" id=""></a>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+        <div class="section-intro">
+            <h2>Get to know me</h2>
+        </div>
+    </section> 
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["Front-end Developer", "UI/UX Designer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true
+        })
+    </script>
+</body>
 </html>
