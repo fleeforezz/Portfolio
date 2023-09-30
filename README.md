@@ -2,7 +2,7 @@
 ![Preview image for the project](/../main/preview.png)
 
 # To test the project
-### Requirement :
+### Requirement
 - NodeJS
 - Npm
 
