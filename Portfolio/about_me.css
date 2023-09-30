@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Poppins;
+    background-color: #10031e;
+    height: 100vh;
+}
+
+.navigation-parent {
+    color: white;
+    left: 4%;
+}
+
+.navigation-child {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    min-width: 50%;
+    margin-left: 5em;
+    font-size: 1.2em;
+    gap: 2rem;
+}
+
+.intro {
+    color: white;
+    text-decoration: none;
+}
+.intro span {
+    color: violet;
+}
+
+.links {
+    display: flex;
+    margin-top: 41px;
+    gap: 2rem;
+}
+
+.links p {
+    display: flex;
+    margin-top: 0%;
+    margin-left: -3%;
+    margin-right: -3%;
+}
+
+.links .child {
+    text-decoration: none;
+    color: aliceblue;
+    border: none;
+    padding: 0.1rem 0.3rem;
+    position: relative;
+    transition: .5s ease;
+}
+
+.links .child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: .5s ease;
+}
+
+.links .child:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+}
+
+.links .child:hover::before {
+    width: 50%;
+}
+
+.links .child::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #ffc506;
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.links .child:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
