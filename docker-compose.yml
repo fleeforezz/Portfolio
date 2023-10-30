@@ -5,5 +5,5 @@ services:
     ports:
       - "2001:80"
     volumes:
-      - ./work_space
+      - ./code
     restart: unless-stopped
