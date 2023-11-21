@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
-    background-color: #070508;
+    background-color: #020112;
     height: 1000vh;
     scroll-behavior: smooth;
 }
@@ -15,12 +15,12 @@ body {
     /* background */
 .background {
     position: fixed;
-    z-index: -1;
+    z-index: 0;
     top: 50%;
     left: 50%;
     height: 1px;
     width: 1px;
-    background-color: #fff;
+    background-color: #020112;
     border-radius: 50%;
     box-shadow: -42vw -4vh 0px 0px #fff,
                 25vw -41vh 0px 0px #fff,
@@ -205,169 +205,27 @@ body {
     }
 }
 
-/* .black-hole {
+.black-hole {
     position: absolute;
-    left: 50%;
-    top: 5%;
-    padding: 150px;
-    background-color: rgb(255, 89, 255);
-    border-radius: 50%;
-    box-shadow: 0px 5px 1000px white;
-    filter: blur(5px);
-    transform: translate(-50%, -50%);
-} */
-
-/* .planet-1 {
-    padding: 24px;
-    background-color: #805bd9;
-    box-shadow: 0px 0px 10px #805bd9;
-    transform: translate(20em, -10em);
-    border-radius: 50%;
-}
-.planet-2 {
-    padding: 40px;
-    background-color: #2356e2;
-    box-shadow: 0px 0px 10px #2356e2;
-    transform: translate(30em, 12em);
-    border-radius: 50%;
-}
-.planet-3 {
-    padding: 50px;
-    background-color: #cf5016;
-    box-shadow: 0px 0px 10px #cf5016;
-    transform: translate(-30em, -20em);
-    border-radius: 50%;
-} */
-
-    /* navigation-bar */
-/* .navigation-parent {
-    color: white;
-    left: 2%;
-}
-.navigation-child {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 70%;
-    margin-left: 5em;
-    font-size: 1.2em;
-    gap: 2rem;
-}
-.intro {
-    color: white;
-    text-decoration: none;
-}
-.intro span {
-    color: violet;
-}
-.links {
-    display: flex;
-    margin-top: 41px;
-    gap: 2rem;
-}
-.links p {
-    display: flex;
-    margin-top: 0%;
-    margin-left: -3%;
-    margin-right: -3%;
-}
-.links .child {
-    text-decoration: none;
-    color: aliceblue;
-    border: none;
-    padding: 0.1rem 0.3rem;
-    position: relative;
-    transition: .5s ease;
-}
-.links .child::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background-color: #ffc506;
-    transition: .5s ease;
-}
-.links .child:hover {
-    color: #1e1e2b;
-    transition-delay: .5s;
-}
-.links .child:hover::before {
-    width: 50%;
-}
-.links .child::after {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background-color: #ffc506;
-    transition: .4s ease;
     z-index: -1;
+    transform: rotate(180deg) translate(0%, 41.5%);
 }
-.links .child:hover::after {
-    height: 100%;
-    transition-delay: 0.4s;
-    color: aliceblue;
+.black-hole video {
+    width: 100%;
 }
-
-.greeting-parent {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 65px;
-}
-.greeting-child {
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 50px;
-    width: 58%;
-    min-width: 45%;
-}
-.greeting-child h1 {
-    color: white;
-    font-weight: 300;
-}
-.name {
-    font-size: 4em;
-    font-weight: 600;
-    color: rgb(196, 148, 254);
-}
-.quick-review {
-    color: white;
-    font-size: 1.5em;
-    margin-bottom: 60px;
-}
-.cv {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 1em;
-    font-weight: 700;
-    padding: 15px 25px;
-    border: 3px solid #8827e9;
-    background-color: transparent;
-    cursor: pointer;
-    border-radius: 45px;
-    transition: all 300ms;
-}
-.cv:hover {
-    background-image: linear-gradient(45deg, #8827e9, rgb(225, 76, 236));
-    color: #1e1e2b;
-    transform: scale(1.2);
-} */
 
 .navigation-bar-child {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 25rem;
+    top: 0;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 10px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    box-shadow: 1px 1px 5px #0c0754;
 }
 
 .navigation-bar-logo {
@@ -379,7 +237,7 @@ body {
 }
 
 .navigation-logo-img {
-    width: 64px;
+    width: 40px;
 }
 
 .navigation-bar-logo {
@@ -388,7 +246,13 @@ body {
     font-size: 1.4rem;
 }
 
-.navigation-bar-row-tab {
+.navigation-bar-row-tab-parent {
+    background-color: rgba(50, 50, 50, 0.36);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.navigation-bar-row-tab-child {
     display: flex;
     flex-wrap: nowrap;
     gap: 5rem;
