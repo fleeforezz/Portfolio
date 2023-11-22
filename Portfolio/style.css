@@ -227,6 +227,7 @@ body {
     backdrop-filter: blur(10px);
     position: fixed;
     box-shadow: 1px 1px 5px #0c0754;
+    z-index: 1;
 }
 
 .navigation-bar-logo {
