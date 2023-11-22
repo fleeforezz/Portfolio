@@ -982,11 +982,7 @@ body {
     transition: 350ms;
 }
 .project-column-1:hover, .project-column-1 img {
-    /* box-shadow: 0px 0px 20px #4017d3; */
     transform: translate(0%, -6%);
-    width: 500px;
-    height: 350px;
-    height: 70vh;
 }
 
 .project-column-1 img {
