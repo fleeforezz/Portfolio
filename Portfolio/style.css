@@ -10,10 +10,11 @@ body {
     font-family: 'Work Sans', sans-serif;
     background-color: #020112;
     height: 1000vh;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
+    cursor: url('/image/cursor-default.png'), default;
 }
 
-    /* background */
+/* background */
 .background-1 {
     position: fixed;
     z-index: 0;
@@ -977,6 +978,7 @@ body {
     border: 1px solid #0c0754;
     border-radius: 10px;
     text-decoration: none;
+    height: 65vh;
     z-index: 1;
     transition: 250ms;
 }
@@ -988,7 +990,7 @@ body {
     border-radius: 10px;
     object-fit: cover;
     width: 400px;
-    height: 200px;
+    height: 250px;
 }
 
 .project-card-parent-heading {
