@@ -26,7 +26,7 @@ export default function Projects() {
 
                     <Link href={''} className="bg-background border border-outline rounded-md transition-all hover:-translate-y-7">
                         <div>
-                            <img src="/Homelab.png" className="block mx-auto max-h-56 rounded-md"/>
+                            <img src="/HomeLab.png" className="block mx-auto max-h-56 rounded-md"/>
                         </div>
                         <div className="p-5">
                             <h4 className="font-semibold text-xl my-2 text-white">
