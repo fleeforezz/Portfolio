@@ -16,7 +16,11 @@ COPY . .
 RUN npm run build  
 
 # Expose the port the app will run on  
-EXPOSE 6060
+EXPOSE 9453
+
+ENV PORT 9453
+# set hostname to localhost
+ENV HOSTNAME "0.0.0.0"
 
 # Start the app  
 CMD ["npm", "start"]
