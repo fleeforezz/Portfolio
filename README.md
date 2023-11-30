@@ -1,11 +1,13 @@
 # Portfolio
 ![Preview image for the project](/../main/preview.png)
 
-# To test the project
+# Website
+https://fleeforezz.me
+# To deploy the project
 ### Requirement
 - Docker
 
-### Run the project
+### Deployment
 1. Clone the project
 ```
 git clone https://github.com/fleeforezz/Portfolio.git
