@@ -3,8 +3,7 @@
 
 # To test the project
 ### Requirement
-- NodeJS
-- Npm
+- Docker
 
 ### Run the project
 1. Clone the project
@@ -13,13 +12,13 @@ git clone https://github.com/fleeforezz/Portfolio.git
 ``` 
 2. Get inside the project
 ```
-cd ./Portfolio/Portfolio
+cd Portfolio
 ```
-3. Install npm 
+3. Build docker Image 
 ```
-npm install
+docker build -t nextjs-portfolio .
 ```
-4. Run npm in dev mode
+4. Run the docker
 ```
-npm run dev
+docker run --rm -p 3000:3000 --name nextjs-portfolio nextjs-portfolio
 ```
