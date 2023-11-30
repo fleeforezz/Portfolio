@@ -12,8 +12,8 @@ export default function Footer() {
             <div className="">
                 <div className="grid grid-cols-3">
                     <div className="flex flex-col gap-8 text-white items-center">
-                        <h5 className="font-bold">
-                            <span>Community</span>
+                        <h5 className="font-bold text-lg">
+                            Community
                         </h5>
                         <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
                             <Facebook />
@@ -30,8 +30,8 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col gap-8 text-white items-center">
-                        <h5 className="font-bold">
-                            <span>Download CV</span>
+                        <h5 className="font-bold text-lg">
+                            Download CV
                         </h5>
                         <a href="/CV.pdf" type="download" className="flex gap-2 transition-all hover:translate-x-3">
                             <Download />
@@ -40,8 +40,8 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col gap-8 text-white items-center">
-                        <h5 className="font-bold">
-                            <span>Get to know me</span>
+                        <h5 className="font-bold text-lg">
+                            Get to know me
                         </h5>
                         <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
                             <Github />
