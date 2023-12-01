@@ -35,10 +35,10 @@ body {
   min-height: 100vh;
 }
 
-/* div.hero {
+div.footer {
   @apply grid;
-  grid-template-columns: .6fr .6fr;
-} */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
 span {
   background-color: #f3ec78;

@@ -8,7 +8,7 @@ export default function Projects() {
                     <span>Projects</span>
                 </h2>
 
-                <div className="grid grid-cols-3 gap-20  p-14 sm:grid-cols-1 md:grid-cols-3">
+                <div className="footer grid gap-20  p-14 sm:grid-cols-1 sm:p-24 md:grid-cols-3 z-0">
                     <Link href={''} className="bg-background border border-outline rounded-md transition-all hover:-translate-y-7">
                         <div>
                             <img src="/portfolio.png" className="block mx-auto max-h-56 rounded-md"/>
