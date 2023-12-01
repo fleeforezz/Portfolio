@@ -6,6 +6,7 @@ https://fleeforezz.me
 # To deploy the project
 ### Requirement
 - Docker
+- Docker Compose
 
 ### Deploy with Dockerfile
 1. Clone the project
