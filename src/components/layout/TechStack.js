@@ -3,7 +3,7 @@ import Sparkle from "../icons/sparkle";
 
 export default function TechStack() {
     return (
-        <section className="max-w-7xl mx-auto px-4 pb-96 overflow-x-hidden">
+        <section id="skills" className="max-w-7xl mx-auto px-4 pb-96 overflow-x-hidden">
             <div className="flex flex-col items-center">
                 <p className="flex absolute gap-3 text-slate-400 text-sm items-center bg-background px-4 py-1 rounded-full border border-outline">
                     <Sparkle />

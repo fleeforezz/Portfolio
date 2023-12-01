@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 import Sparkle from "../icons/sparkle";
 import Right from "../icons/Right";
 
 export default function Hero() {
+    function handleclick() {
+        console.log('increment like count');
+    }
     return (
         <section className="max-w-7xl mx-auto p-4 overflow-x-hidden">
             <div className="grid gap-32 py-12 sm:grid-cols-2 md:grid-cols-2 items-center">
@@ -16,18 +20,14 @@ export default function Hero() {
                         I'm a DevOps Engineer with experience in Server, CI/CD, Docker.
                         Check out my projects and skills.
                     </p>
-                    <button className="flex gap-4 items-center align-middle text-white bg-primary px-5 py-3 mt-10 rounded-lg shadow shadow-outline transition-all hover:shadow-md hover:shadow-outline">
-                        Learn more
+                    <button onClick={handleclick} className="flex gap-4 items-center align-middle text-white bg-primary px-5 py-3 mt-10 rounded-lg shadow shadow-outline transition-all hover:shadow-md hover:shadow-outline">
+                        <a>Learn more</a>
                         <Right />
                     </button>
                 </div>
 
                 <div className="relative">
                     <Image src={'/mainIconsdark.svg'} alt="tech-stack-tree" width={550} height={550} />
-                </div>
-
-                <div>
-                    
                 </div>
             </div>
         </section>

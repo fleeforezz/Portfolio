@@ -12,11 +12,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='scroll-smooth'>
       <head>
         <link rel="icon" href="/favicon.ico\"/>
       </head>
-      <body className='bg-background'>
+      <body className='bg-background font-[workSans] min-h-screen scroll-smooth'>
         <div id='stars-1'></div>
         <div id='stars-2'></div>
         <div id='stars-3'></div>
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
         {children}
         <video src="/blackhole.webm" autoPlay loop muted width={1250} height={1250} className="flex absolute -translate-x-96 -translate-y-80 -mt-8 -left-56 -z-50 rotate-180"></video>
         <Footer />
+        <p className="text-slate-400 text-xs text-center p-2 bg-background backdrop-blur">Designed by WebChain Dev</p>
       </body>
     </html>
   );

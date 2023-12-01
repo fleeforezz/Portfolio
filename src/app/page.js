@@ -1,3 +1,4 @@
+import AboutMe from '@/components/layout/AboutMe';
 import Exquisite from '@/components/layout/Exquisite';
 import Hero from '@/components/layout/Hero';
 import Projects from '@/components/layout/Projects';
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AboutMe />
       <TechStack />
       <Exquisite />
       <Projects />

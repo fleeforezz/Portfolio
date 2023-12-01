@@ -20,7 +20,7 @@
   background-color: #291a44;
 }
 
-*,
+/* *,
 *:before,
 *:after {
   @apply cursor-default;
@@ -28,12 +28,7 @@
 
 a, button {
   @apply cursor-pointer;
-}
-
-body {
-  font-family: Worker_Sans;
-  min-height: 100vh;
-}
+} */
 
 div.project {
   @apply grid;

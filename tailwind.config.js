@@ -12,9 +12,10 @@ export const theme = {
       navigation_box_shadow: '#0c0754',
       primary: '#150435',
       outline: '#4017d3',
+      project_outline: '#140049',
     },
     cursor: {
-      'default': 'url(/cursor-default.png), default',
+      // 'default': 'url(/cursor-default.png), default',
     }
   },
 };
