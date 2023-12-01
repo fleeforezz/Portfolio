@@ -7,7 +7,7 @@ https://fleeforezz.me
 ### Requirement
 - Docker
 
-### Deployment
+### Deploy with Dockerfile
 1. Clone the project
 ```
 git clone https://github.com/fleeforezz/Portfolio.git
@@ -22,5 +22,19 @@ docker build -t nextjs-portfolio .
 ```
 4. Run the docker
 ```
-docker run --rm -p 3000:3000 --name nextjs-portfolio nextjs-portfolio
+docker run --rm -p 9453:9453 --name nextjs-portfolio nextjs-portfolio
+```
+
+### Deploy with docker compose
+1. Clone the project
+```
+git clone https://github.com/fleeforezz/Portfolio.git
+```
+2. Get inside the project
+```
+cd Portfolio
+```
+3. Run docker-compose.yml file
+```
+docker-compose up -d
 ```
