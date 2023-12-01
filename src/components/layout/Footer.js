@@ -10,8 +10,8 @@ export default function Footer() {
     return (
         <footer className="backdrop-blur pt-20 pb-36">
             <div className="">
-                <div className="grid grid-cols-3">
-                    <div className="flex flex-col gap-8 text-white items-center">
+                <div className="footer grid grid-cols-3">
+                    <div className="flex flex-col gap-8 text-white items-center mt-5">
                         <h5 className="font-bold text-lg">
                             Community
                         </h5>
@@ -29,7 +29,7 @@ export default function Footer() {
                         </Link>
                     </div>
 
-                    <div className="flex flex-col gap-8 text-white items-center">
+                    <div className="flex flex-col gap-8 text-white items-center mt-5">
                         <h5 className="font-bold text-lg">
                             Download CV
                         </h5>
@@ -39,7 +39,7 @@ export default function Footer() {
                         </a>
                     </div>
 
-                    <div className="flex flex-col gap-8 text-white items-center">
+                    <div className="flex flex-col gap-8 text-white items-center mt-5">
                         <h5 className="font-bold text-lg">
                             Get to know me
                         </h5>

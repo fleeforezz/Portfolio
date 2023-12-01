@@ -9,10 +9,10 @@ export default function TechStack() {
                     <Sparkle />
                     My favorite tech stack
                 </p>
-                <p className="text-white text-3xl mt-20">
+                <p className="text-white text-3xl mt-20 text-center">
                     Building apps with modern technology
                 </p>
-                <p className="text-slate-400 mt-10">
+                <p className="text-slate-400 mt-10 text-center">
                     Made with passion
                 </p>
                 <div className="flex flex-col gap-10 mt-20 items-center">
@@ -38,7 +38,7 @@ export default function TechStack() {
                         <Image src={'/vercel.svg'} width={100} height={100} />
                     </div>
                 </div>
-                <video src="/cards-video.webm" autoPlay loop muted className="flex absolute w-full h-full opacity-60 -z-50"></video>
+                <video src="/cards-video.webm" autoPlay loop muted className="flex absolute w-[1250px] h-full opacity-60 -z-50"></video>
             </div>
         </section>
     )

@@ -35,9 +35,14 @@ body {
   min-height: 100vh;
 }
 
+div.project {
+  @apply grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
 div.footer {
   @apply grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 span {
