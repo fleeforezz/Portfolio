@@ -20,7 +20,7 @@ export default function Header() {
             <video src="/blackhole.webm" autoPlay muted loop className="absolute -top-[47%] -z-50 rotate-180"></video>
             
             <div id="navbar" className="left-0 w-full items-center">
-                <nav className="flex md:flex-row flex-col items-center justify-between mx-auto p-4 md:p-5 backdrop-blur shadow-sm shadow-navigation_box_shadow">
+                <nav className="flex md:flex-row flex-col fixed w-full items-center justify-between mx-auto p-4 md:p-5 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
                     <nav className="flex gap-4 items-center">
                         <Image src={'/atom.png'} width={45} height={45} />
                         <Link href={'/'} className="text-white">Nhat Truong</Link>
