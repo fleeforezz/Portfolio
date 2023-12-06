@@ -9,7 +9,7 @@ export default function Hero() {
     }
     return (
         <section className="max-w-7xl mx-auto p-4 overflow-x-hidden">
-            <div className="grid gap-32 py-12 sm:grid-cols-2 md:grid-cols-2 items-center">
+            <div className="grid gap-32 py-20 sm:grid-cols-2 md:grid-cols-2 items-center">
                 <div className="p-3">
                     <p className="flex absolute gap-3 text-slate-400 text-sm items-center bg-background px-4 py-1 rounded-full border border-outline">
                         <Sparkle />

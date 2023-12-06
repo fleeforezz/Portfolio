@@ -3,24 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-    // window.onscroll = function() {myFunction()};
-    // var navbar = document.getElementById('navbar');
-    // var sticky = navbar.offsetTop;
-
-    // function myFunction() {
-    //     if (window.scrollY >= sticky) {
-    //         navbar.classList.add("sticky");
-    //     }
-    //     else {
-    //         navbar.classList.remove("sticky");
-    //     }
-    // }
     return (
         <header>
             <video src="/blackhole.webm" autoPlay muted loop className="absolute -top-[47%] -z-50 rotate-180"></video>
             
-            <div id="navbar" className="left-0 w-full items-center">
-                <nav className="flex md:flex-row flex-col fixed w-full items-center justify-between mx-auto p-4 md:p-5 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
+            <div className="left-0 w-full items-center">
+                <nav className="flex md:flex-row flex-col fixed w-full items-center justify-around mx-auto p-4 md:p-5 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
                     <nav className="flex gap-4 items-center">
                         <Image src={'/atom.png'} width={45} height={45} />
                         <Link href={'/'} className="text-white">Nhat Truong</Link>
