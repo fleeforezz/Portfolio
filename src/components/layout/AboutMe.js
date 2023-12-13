@@ -15,7 +15,7 @@ export default function AboutMe() {
             <div className="flex flex-wrap md:flex-nowrap sm:flex-nowrap gap-11 py-20 align-middle items-center">
                 <Image src={"/about-me-image.jpg"} width={400} height={400} className="relative rounded-3xl" />
                 <div>
-                    <div className="flex gap-10 flex-wrap relative border justify-center align-middle">
+                    <div className="flex gap-10 flex-wrap relative justify-center align-middle">
                         <div className="flex flex-col gap-1 border-2 rounded-3xl text-black bg-white px-[7rem] py-10 text-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1a1a1a" viewBox="0 0 256 256">
                                 <path 
