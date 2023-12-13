@@ -1,58 +1,84 @@
-import Link from "next/link";
 import Facebook from "../icons/Facebook";
-import Instagram from "../icons/Instagram";
-import Discord from "../icons/Discord";
-import Download from "../icons/Download";
 import Github from "../icons/Github";
-import More from "../icons/More";
+import Linkedin from "../icons/Linkedin";
+import Mail from "../icons/Mail";
+import Sparkle from "../icons/sparkle";
+import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="backdrop-blur pt-20 pb-36">
-            <div className="">
-                <div className="footer grid grid-cols-3">
-                    <div className="flex flex-col gap-8 text-white items-center mt-5">
-                        <h5 className="font-bold text-lg">
-                            Community
-                        </h5>
-                        <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
-                            <Facebook />
-                            Facebook
-                        </Link>
-                        <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
-                            <Instagram />
-                            Instagram
-                        </Link>
-                        <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
-                            <Discord />
-                            Discord
-                        </Link>
-                    </div>
+        <footer id="contact-info" className="flex flex-col items-center py-48 max-h-screen max-w-7xl mx-auto">
+            <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
+                <Sparkle />
+                Get in touch
+            </h3>
+            <h2 className="text-black text-6xl text-center mt-4">
+                Contact me
+            </h2>
 
-                    <div className="flex flex-col gap-8 text-white items-center mt-5">
-                        <h5 className="font-bold text-lg">
-                            Download CV
-                        </h5>
-                        <a href="/CV.pdf" type="download" className="flex gap-2 transition-all hover:translate-x-3">
-                            <Download />
-                            Download here
-                        </a>
-                    </div>
-
-                    <div className="flex flex-col gap-8 text-white items-center mt-5">
-                        <h5 className="font-bold text-lg">
-                            Get to know me
-                        </h5>
-                        <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
-                            <Github />
-                            Github
-                        </Link>
-                        <Link href={''} className="flex gap-2 transition-all hover:translate-x-3">
-                            <More />
-                            More about me
-                        </Link>
-                    </div>
+            <div className="grid grid-cols-2 gap-5 border-2 border-slate-500 bg-slate-50 px-24 py-5 mt-20 rounded-2xl">
+                <div className="flex gap-2 items-center">
+                    <a href="" className="flex gap-2 items-center">
+                        <Mail />
+                        <p>nhattruong.tmn@gmail.com</p>
+                    </a>
                 </div>
+
+                <div className="flex justify-center">
+                    <a href="https://www.linkedin.com/in/nhattruongminh/" target="_blank" className="flex gap-2 items-center">
+                        <Linkedin />
+                        <p>Linkedin</p>
+                    </a>
+                </div>
+
+                <div className="flex justify-center">
+                    <a href="https://github.com/fleeforezz" target="_blank" className="flex gap-2 items-center">
+                        <Github />
+                        <p>Github</p>
+                    </a>
+                </div>
+
+                <div className="flex justify-center">
+                    <a href="https://github.com/fleeforezz" target="_blank" className="flex gap-2 items-center">
+                        <Facebook />
+                        <p>Facebook</p>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <nav className="flex md:flex-row flex-col w-full items-center justify-around mx-auto my-14 md:p-5">                
+                    <nav>
+                        <div className="flex gap-14 text-black">
+                        <div className="relative">
+                                <Link href={'#about-me'} className="about-me font-semibold">
+                                    About me
+                                </Link>
+                            </div>
+                            <div className="relative">
+                                <Link href={'#skills'} className="skills font-semibold">
+                                    Skills
+                                </Link>
+                            </div>
+                            <div className="relative">
+                                <Link href={'#projects'} className="project font-semibold">
+                                    Projects
+                                </Link>
+                            </div>
+                            <div className="relative">
+                                <Link href={'#contact-info'} className="project font-semibold">
+                                    Contact Me
+                                </Link>
+                            </div>
+                        </div>
+                    </nav>
+                </nav>
+            </div>
+
+            <div>
+                <h4 className="text-slate-500 text-sm p-2">
+                    Copyright @ 2023 Nhat Truong. All Rights Reserves
+                </h4>
             </div>
         </footer>
     );

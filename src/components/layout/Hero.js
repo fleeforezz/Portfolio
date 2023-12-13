@@ -1,33 +1,42 @@
 "use client";
 import Image from "next/image";
-import Sparkle from "../icons/sparkle";
-import Right from "../icons/Right";
 
 export default function Hero() {
-    function handleclick() {
-        console.log('increment like count');
-    }
     return (
-        <section className="max-w-7xl mx-auto p-4 overflow-x-hidden">
-            <div className="grid gap-32 py-20 sm:grid-cols-2 md:grid-cols-2 items-center">
-                <div className="p-3">
-                    <p className="flex absolute gap-3 text-slate-400 text-sm items-center bg-background px-4 py-1 rounded-full border border-outline">
-                        <Sparkle />
-                        DevOps Engineer & Front-end Developer
-                    </p>
-                    <h1 className="text-white text-5xl font-bold mt-20 mb-10">Building <span>playground</span> for Developers 🧙‍♂️</h1>
-                    <p className="text-slate-400">
-                        I'm a DevOps Engineer with experience in Server, CI/CD, Docker.
-                        Check out my projects and skills.
-                    </p>
-                    <button onClick={handleclick} className="flex gap-4 items-center align-middle text-white bg-primary px-5 py-3 mt-10 rounded-lg shadow shadow-outline transition-all hover:shadow-md hover:shadow-outline">
-                        <a>Learn more</a>
-                        <Right />
-                    </button>
+        <section className="max-w-3xl mx-auto min-h-screen overflow-x-hidden relative">
+            <div className="grid mt-64 sm:grid-cols-2 md:grid-cols-2 items-center">
+                <div className="relative">
+                    <Image src={'/profile-image.jpg'} alt="tech-stack-tree" width={325} height={325} className="rounded-full" />
                 </div>
 
-                <div className="relative">
-                    <Image src={'/mainIconsdark.svg'} alt="tech-stack-tree" width={550} height={550} />
+                <div className="flex flex-col gap-3 text-center items-center">
+                    <h3 className="text-slate-500 text-md text-center">
+                        Hello i'm
+                    </h3>
+                    <h1 className="text-black text-6xl font-bold">
+                        Nhat Truong
+                    </h1>
+                    <h2 className="text-slate-700 text-xl font-bold">
+                        <span>Front-End</span> Developer
+                    </h2>
+
+                    <div className="flex gap-7">
+                        <a href="/CV.pdf" type="download" className="text-black border-2 px-5 py-3 mt-10 rounded-full transition-all hover:bg-black hover:text-white">
+                            Download CV
+                        </a>
+                        <a href="#contact-info" className="text-white bg-black px-5 py-3 mt-10 rounded-full transition-all border-2 hover:bg-transparent hover:text-black">
+                            Contact info
+                        </a>
+                    </div>
+
+                    <div className="flex gap-7 py-4">
+                        <a href="https://www.linkedin.com/in/nhattruongminh/" target="_blank">
+                            <Image src={"/linkedin-logo.svg"} width={40} height={40} className="cursor-pointer"/>
+                        </a>
+                        <a href="https://github.com/fleeforezz" target="_blank">
+                            <Image src={"/github-logo.svg"} width={40} height={40} className="cursor-pointer"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -7,9 +7,9 @@ export const content = [
 export const theme = {
   extend: {
     colors: {
-      background: '#090017',
+      background: '#fffff',
       navigation_links: '#3232325c',
-      navigation_box_shadow: '#0c0754',
+      navigation_box_shadow: '#CFCFCF',
       primary: '#150435',
       outline: '#4017d3',
       project_outline: '#140049',
