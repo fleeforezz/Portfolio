@@ -3,8 +3,8 @@ import Sparkle from "../icons/sparkle"
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="flex flex-col items-center px-20 py-24 border overflow-x-hidden">
-            <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
+        <section id="about-me" className="flex flex-col items-center px-20 py-24 overflow-x-hidden">
+            <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border-outline">
                 <Sparkle />
                 Get to know more
             </h3>
@@ -12,7 +12,7 @@ export default function AboutMe() {
                 About Me
             </h2>
 
-            <div className="flex flex-wrap md:flex-nowrap sm:flex-nowrap gap-11 py-20 align-middle items-center border">
+            <div className="flex flex-wrap md:flex-nowrap sm:flex-nowrap gap-11 py-20 align-middle items-center">
                 <Image src={"/about-me-image.jpg"} width={400} height={400} className="relative rounded-3xl" />
                 <div>
                     <div className="flex gap-10 flex-wrap relative border justify-center align-middle">

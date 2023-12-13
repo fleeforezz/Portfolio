@@ -16,7 +16,7 @@ export default function Footer() {
                 Contact me
             </h2>
 
-            <div className="contact grid grid-cols-2 gap-5 border-2 border-slate-500 bg-slate-50 px-24 py-5 mt-20 rounded-2xl">
+            <div className="contact grid grid-cols-2 max-sm:grid-cols-1 gap-5 border-2 border-slate-500 bg-slate-50 px-24 py-5 mt-20 rounded-2xl">
                 <div className="flex gap-2 items-center">
                     <a href="" className="flex gap-2 items-center">
                         <Mail />

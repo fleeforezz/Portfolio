@@ -20,10 +20,10 @@
   background-color: #1b1428;
 } */
 
-div.contact {
+/* div.contact {
   @apply grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
+} */
 /* div.projects {
   @apply grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
