@@ -3,7 +3,7 @@ import Sparkle from "../icons/sparkle"
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="flex flex-col items-center py-24 max-w-7xl mx-auto">
+        <section id="about-me" className="flex flex-col items-center px-20 py-24 border overflow-x-hidden">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                 <Sparkle />
                 Get to know more
@@ -12,10 +12,10 @@ export default function AboutMe() {
                 About Me
             </h2>
 
-            <div className="flex flex-nowrap gap-14 py-20 align-middle items-center max-w-[90rem]">
+            <div className="flex flex-wrap md:flex-nowrap sm:flex-nowrap gap-11 py-20 align-middle items-center border">
                 <Image src={"/about-me-image.jpg"} width={400} height={400} className="relative rounded-3xl" />
                 <div>
-                    <div className="flex gap-12 relative">
+                    <div className="flex gap-10 flex-wrap relative border justify-center align-middle">
                         <div className="flex flex-col gap-1 border-2 rounded-3xl text-black bg-white px-[7rem] py-10 text-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1a1a1a" viewBox="0 0 256 256">
                                 <path 
@@ -37,7 +37,7 @@ export default function AboutMe() {
                             <p className="text-slate-600">Back-End Developer</p>
                         </div>
                     </div>
-                    <p className="text-black mt-10 leading-relaxed">
+                    <p className="text-black mt-10 leading-relaxed max-w-3xl">
                     I have studied web development for a year, and during this time,
                     I realized I have passionate in designing user interfaces for websites. 
                     I focus on making interfaces easy to use and work well on different mobile devices. 

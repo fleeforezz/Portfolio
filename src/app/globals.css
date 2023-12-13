@@ -20,15 +20,14 @@
   background-color: #1b1428;
 } */
 
-div.project {
+div.contact {
   @apply grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
-
-div.footer {
+/* div.projects {
   @apply grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
+} */
 
 span {
   background-color: #f3ec78;
