@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer id="contact-info" className="flex flex-col items-center py-48 max-h-screen max-w-7xl mx-auto">
+        <footer id="contact-info" className="flex flex-col sticky items-center py-48 max-h-screen max-w-7xl mx-auto">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                 <Sparkle />
                 Get in touch

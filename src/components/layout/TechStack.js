@@ -12,7 +12,7 @@ export default function TechStack() {
                     Experience
                 </h2>
                 <div className="flex flex-wrap gap-20 py-20">
-                    <div className="border-2 px-24 py-16 bg-white rounded-3xl">
+                    <div className="border-2 border-slate-500 px-24 py-16 bg-slate-50 rounded-3xl">
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Front-End Development
                         </h3>
@@ -67,7 +67,7 @@ export default function TechStack() {
                             </div>
                         </div>
                     </div>
-                    <div className="border-2 bg-white px-24 py-16 rounded-3xl">
+                    <div className="border-2 border-slate-500 bg-slate-50 px-24 py-16 rounded-3xl">
                         <h3 className="text-slate-600 text-center text-3xl font-bold">Back-End Development</h3>
                         <div className="grid grid-cols-2 gap-9 text-slate-500 text-lg p-4 mt-5">
                             <div className="flex gap-2">

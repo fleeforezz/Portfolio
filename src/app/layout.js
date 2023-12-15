@@ -14,12 +14,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth'>
       <head>
-        <link rel="icon" href="/favicon.ico\"/>
+        <link rel="icon" href="/favicon.ico\" />
       </head>
-      <body className='bg-white font-[inter] scroll-smooth overflow-x-hidden'>
-        <div id='stars-1'></div>
+      <body className='noise font-[inter] scroll-smooth overflow-x-hidden'>
+
+        {/* <div id='stars-1'></div>
         <div id='stars-2'></div>
-        <div id='stars-3'></div>
+        <div id='stars-3'></div> */}
+
         <Header />
         {children}
         <Footer />
