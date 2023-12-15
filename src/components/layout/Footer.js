@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer id="contact-info" className="flex flex-col sticky items-center py-48 max-h-screen max-w-7xl mx-auto">
+        <footer id="contact-info" className="flex flex-col sticky items-center py-48 max-sm:py-5 max-h-screen max-w-7xl mx-auto">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                 <Sparkle />
                 Get in touch
@@ -16,8 +16,8 @@ export default function Footer() {
                 Contact me
             </h2>
 
-            <div className="contact grid grid-cols-2 max-sm:grid-cols-1 gap-5 border-2 border-slate-500 bg-slate-50 px-24 py-5 mt-20 rounded-2xl">
-                <div className="flex gap-2 items-center">
+            <div className="contact grid grid-cols-2 max-sm:grid-cols-1 gap-5 border-2 border-slate-500 bg-slate-50 px-24 max-sm:px-11 py-5 mt-20 rounded-2xl">
+                <div className="flex gap-2">
                     <a href="" className="flex gap-2 items-center">
                         <Mail />
                         <p>nhattruong.tmn@gmail.com</p>
@@ -49,7 +49,7 @@ export default function Footer() {
             <div>
                 <nav className="flex md:flex-row flex-col w-full items-center justify-around mx-auto my-14 md:p-5">                
                     <nav>
-                        <div className="flex gap-14 text-black">
+                        <div className="flex gap-14 max-sm:gap-4 text-black">
                         <div className="relative">
                                 <Link href={'#about-me'} className="about-me font-semibold">
                                     About me

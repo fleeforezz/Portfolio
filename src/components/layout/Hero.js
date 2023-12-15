@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section className="flex p-10 justify-center min-h-screen overflow-x-hidden overflow-y-hidden relative">
+        <section className="flex p-4 justify-center min-h-screen overflow-x-hidden overflow-y-hidden relative">
             <div className="block max-md:hidden max-sm:hidden">
                 <div className="absolute top-[50%] left-[60%] translate-x-[70%] -translate-y-[90%] rotate-90 -z-40">
                     <Image src={'/leaf-1.png'} width={400} height={400}/>
@@ -13,8 +13,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="grid mt-20 gap-0 sm:grid-cols-2 md:grid-cols-2 items-center">
-                <div className="relative">
+            <div className="grid mt-20 max-sm:mt-1 gap-0 sm:grid-cols-2 md:grid-cols-2 items-center">
+                <div className="w-full max-sm:w-32 max-sm:m-auto max-sm:mb-5 max-md:w-52">
                     <Image src={'/profile-image.jpg'} alt="tech-stack-tree" width={325} height={325} className="rounded-full" />
                 </div>
 
@@ -22,7 +22,7 @@ export default function Hero() {
                     <h3 className="text-slate-500 text-md text-center">
                         Hello i'm
                     </h3>
-                    <h1 className="text-black text-6xl font-bold">
+                    <h1 className="text-black text-6xl max-sm:text-5xl font-bold">
                         Nhat Truong
                     </h1>
                     <h2 className="text-slate-700 text-xl font-bold">
@@ -33,7 +33,7 @@ export default function Hero() {
                         <a href="/CV_Truong_Minh_Nhat.pdf" type="download" className="text-black border-2 border-black px-5 py-3 mt-10 rounded-full transition-all hover:bg-black hover:text-white">
                             Download CV
                         </a>
-                        <a href="#contact-info" className="text-white bg-black px-5 py-3 mt-10 rounded-full transition-all border-2 hover:bg-transparent hover:text-black">
+                        <a href="#contact-info" className="text-white bg-black px-5 py-3 mt-10 rounded-full transition-all border-2 hover:bg-transparent hover:text-black hover:border-black">
                             Contact info
                         </a>
                     </div>
@@ -57,8 +57,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="absolute top-[95%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
-                <a href="" className="text-black px-3 py-2 border-2 border-black rounded-[20px]"></a>
+            <div className="absolute top-[95%] left-[47%] -translate-x-[50%] -translate-y-[50%] animate-bounce">
+                <a href="#about-me" className="text-black px-3 py-2 border-2 border-black rounded-[20px]"></a>
                 <span className="absolute bg-black px-[4px] py-[4px] rounded-full top-[40%] left-[36.7%] -translate-x-[50%] -translate-y-[70%] animate-bounce"></span>
             </div>
         </section>

@@ -2,8 +2,8 @@ import Sparkle from "../icons/sparkle";
 
 export default function TechStack() {
     return (
-        <section id="skills" className="px-10 py-24 overflow-x-hidden relative">
-            <div className="flex flex-col items-center">
+        <section id="skills" className="py-24 max-sm:py-5 overflow-x-hidden relative border">
+            <div className="flex flex-col px-10 items-center">
                 <p className="flex gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                     <Sparkle />
                     My favorite tech stack
@@ -11,12 +11,13 @@ export default function TechStack() {
                 <h2 className="text-black text-6xl text-center mt-4">
                     Experience
                 </h2>
-                <div className="flex flex-wrap gap-20 py-20">
-                    <div className="border-2 border-slate-500 px-24 py-16 bg-slate-50 rounded-3xl">
+
+                <div className="flex flex-wrap gap-20 max-sm:gap-10 py-20">
+                    <div className="border-2 border-slate-500 px-24 max-sm:px-10 py-16 max-sm:py-7 bg-slate-50 rounded-3xl">
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Front-End Development
                         </h3>
-                        <div className="grid grid-cols-2 gap-10 text-slate-500 text-lg p-4 mt-5">
+                        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-10 max-sm:gap-2 text-slate-500 text-lg p-4 max-sm:mt-5">
                             <div className="flex gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00000" viewBox="0 0 256 256">
                                     <path 
@@ -67,9 +68,11 @@ export default function TechStack() {
                             </div>
                         </div>
                     </div>
-                    <div className="border-2 border-slate-500 bg-slate-50 px-24 py-16 rounded-3xl">
-                        <h3 className="text-slate-600 text-center text-3xl font-bold">Back-End Development</h3>
-                        <div className="grid grid-cols-2 gap-9 text-slate-500 text-lg p-4 mt-5">
+                    <div className="border-2 border-slate-500 bg-slate-50 px-24 max-sm:px-10 py-16 max-sm:py-7 rounded-3xl">
+                        <h3 className="text-slate-600 text-center text-3xl font-bold">
+                            Back-End Development
+                        </h3>
+                        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-9 max-sm:gap-3 text-slate-500 text-lg p-4 mt-5">
                             <div className="flex gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00000" viewBox="0 0 256 256">
                                     <path 

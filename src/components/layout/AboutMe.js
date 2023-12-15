@@ -3,7 +3,7 @@ import Sparkle from "../icons/sparkle"
 
 export default function AboutMe() {
     return (
-        <section id="about-me" className="flex flex-col items-center px-20 py-24 overflow-x-hidden">
+        <section id="about-me" className="flex flex-col items-center px-20 py-24 max-sm:py-5 overflow-x-hidden">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                 <Sparkle />
                 Get to know more

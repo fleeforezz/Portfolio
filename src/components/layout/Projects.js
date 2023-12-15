@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Projects() {
     return (
-        <section id="projects" className="flex flex-col items-center px-14 py-24 transition-all mx-auto">
+        <section id="projects" className="flex flex-col items-center px-14 max-sm:px-10 py-24 max-sm:py-5 transition-all mx-auto">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
                 <Sparkle />
                 Browse my recent
@@ -19,10 +19,10 @@ export default function Projects() {
                         Portfolio
                     </h3>
                     <div className="flex gap-2">
-                        <a href="https://fleeforezz.me" target="_blank" className="px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://fleeforezz.me" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
                             Live demo
                         </a>
-                        <a href="" className="px-6 py-3 border-2 border-black rounded-full bg-black text-white hover:bg-white hover:text-black transition-all">
+                        <a href="" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full bg-black text-white hover:bg-white hover:text-black transition-all">
                             Github
                         </a>
                     </div>
@@ -34,7 +34,7 @@ export default function Projects() {
                         HomeLab
                     </h3>
                     <div className="flex gap-2">
-                        <a href="https://homarr.fleeforezz.me" target="_blank" className="px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://homarr.fleeforezz.me" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
                             Live demo
                         </a>
                     </div>
@@ -46,10 +46,10 @@ export default function Projects() {
                         Coffee 1900
                     </h3>
                     <div className="flex gap-2">
-                        <a href="https://coffee1900.fleeforezz.me" target="_blank" className="px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://coffee1900.fleeforezz.me" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
                             Live demo
                         </a>
-                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 py-3 border-2 bg-black text-white border-black rounded-full hover:bg-white hover:text-black transition-all">
+                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 bg-black text-white border-black rounded-full hover:bg-white hover:text-black transition-all">
                             Github
                         </a>
                     </div>
@@ -61,10 +61,10 @@ export default function Projects() {
                         Cafi
                     </h3>
                     <div className="flex gap-2">
-                        <a href="https://cafi.vercel.app/" target="_blank" className="px-6 py-3 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://cafi.vercel.app/" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
                             Live demo
                         </a>
-                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 py-3 border-2 border-black text-white bg-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black text-white bg-black rounded-full hover:bg-black hover:text-white transition-all">
                             Github
                         </a>
                     </div>
