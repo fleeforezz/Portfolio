@@ -14,7 +14,7 @@ export default function Projects() {
 
             <div className="projects grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 gap-10 py-20">
                 <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
-                    <Image src={'/portfolio.png'} width={500} height={500} className="w-64 h-64 object-cover rounded-3xl"/>
+                    <Image src={'/portfolio.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Portfolio
                     </h3>
@@ -29,7 +29,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
-                    <Image src={'/HomeLab.png'} width={500} height={500} className="w-64 h-64 object-cover rounded-3xl"/>
+                    <Image src={'/HomeLab.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         HomeLab
                     </h3>
@@ -41,7 +41,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
-                    <Image src={'/Coffee-1900.png'} width={500} height={500} className="w-64 h-64 object-cover rounded-3xl"/>
+                    <Image src={'/Coffee-1900.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Coffee 1900
                     </h3>
@@ -56,7 +56,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
-                    <Image src={'/Cafi.png'} width={500} height={500} className="w-64 h-64 object-cover rounded-3xl"/>
+                    <Image src={'/Cafi.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Cafi
                     </h3>
