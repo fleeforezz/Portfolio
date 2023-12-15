@@ -1,17 +1,47 @@
+"use client";
 import Sparkle from "../icons/sparkle"
 import Image from "next/image"
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function Education() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once: true});
+
+    const mainControls = useAnimation()
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible");
+        }
+    })
+
     return (
         <section id="education" className="flex flex-col items-center px-20 max-sm:px-3 py-24 max-sm:py-5 overflow-x-hidden">
-            <span className="absolute max-sm:hidden bg-slate-500 px-[1px] py-[700px] left-[50%] -translate-x-[50%] translate-y-[12%]"></span>
-            <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
+            <span ref={ref} className="absolute max-sm:hidden bg-slate-500 px-[1px] py-[700px] left-[50%] -translate-x-[50%] translate-y-[12%]"></span>
+            <motion.h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline"
+                variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 0.4, delay: 0.23 }}
+            >
                 <Sparkle />
                 Learn new things
-            </h3>
-            <h2 className="text-black text-6xl text-center mt-4">
+            </motion.h3>
+            <motion.h2 className="text-black text-6xl text-center mt-4"
+                variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 0.4, delay: 0.35 }}
+            >
                 Education
-            </h2>
+            </motion.h2>
 
             <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:gap-2 gap-20 px-5 py-20">
                 <div className="p-10 max-sm:p-5 bg-white border-2 border-slate-500 rounded-3xl transition-all hover:scale-[1.05]">

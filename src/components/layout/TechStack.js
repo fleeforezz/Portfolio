@@ -1,19 +1,57 @@
+"use client";
 import Sparkle from "../icons/sparkle";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 export default function TechStack() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once: true});
+
+    const mainControls = useAnimation()
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("visible");
+        }
+    })
+
     return (
         <section id="skills" className="py-24 max-sm:py-5 overflow-x-hidden relative border">
-            <div className="flex flex-col px-10 items-center">
-                <p className="flex gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
+            <div ref={ref} className="flex flex-col px-10 items-center">
+                <motion.p className="flex gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline"
+                    variants={{
+                        hidden: { opacity: 0, y: 10 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                    initial="hidden"
+                    animate={mainControls}
+                    transition={{ duration: 0.4, delay: 0.23 }}
+                >
                     <Sparkle />
                     My favorite tech stack
-                </p>
-                <h2 className="text-black text-6xl text-center mt-4">
+                </motion.p>
+                <motion.h2 className="text-black text-6xl text-center mt-4"
+                    variants={{
+                        hidden: { opacity: 0, y: 10 },
+                        visible: { opacity: 1, y: 0 },
+                    }}
+                    initial="hidden"
+                    animate={mainControls}
+                    transition={{ duration: 0.4, delay: 0.35 }}
+                >
                     Experience
-                </h2>
+                </motion.h2>
 
                 <div className="grid grid-cols-2 max-sm:grid-cols-1 max-md:grid-cols-1 gap-20 max-sm:gap-10 py-20">
-                    <div className="border-2 border-slate-500 px-24 max-sm:px-10 py-16 max-sm:py-7 bg-slate-50 rounded-3xl">
+                    <motion.div className="border-2 border-slate-500 px-24 max-sm:px-10 py-16 max-sm:py-7 bg-slate-50 rounded-3xl"
+                        variants={{
+                            hidden: { opacity: 0, y: 25 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        initial="hidden"
+                        animate={mainControls}
+                        transition={{ duration: 0.4, delay: 0.47 }}
+                    >
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Front-End Development
                         </h3>
@@ -67,8 +105,16 @@ export default function TechStack() {
                                 NextJS
                             </div>
                         </div>
-                    </div>
-                    <div className="border-2 border-slate-500 bg-slate-50 px-24 max-sm:px-10 py-16 max-sm:py-7 rounded-3xl">
+                    </motion.div>
+                    <motion.div className="border-2 border-slate-500 bg-slate-50 px-24 max-sm:px-10 py-16 max-sm:py-7 rounded-3xl"
+                        variants={{
+                            hidden: { opacity: 0, y: 25 },
+                            visible: { opacity: 1, y: 0 },
+                        }}
+                        initial="hidden"
+                        animate={mainControls}
+                        transition={{ duration: 0.4, delay: 0.47 }}
+                    >
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Back-End Development
                         </h3>
@@ -146,7 +192,7 @@ export default function TechStack() {
                                 GitLab
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

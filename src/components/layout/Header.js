@@ -1,20 +1,37 @@
 "use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Header() {
     return (
         <header id="/">
             <div>
                 <nav className="flex fixed nav-noise md:flex-row flex-col w-full items-center justify-around mx-auto p-4 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
-                    <nav className="flex">
+                    <motion.nav className="flex"
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: { opacity: 1 },
+                        }}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 0.4, delay: 0.23 }}
+                    >
                         <Link href={'#/'} className="text-black text-xl">
                             Nhat Truong
                         </Link>
-                    </nav>
+                    </motion.nav>
                 
                     <nav className="max-sm:hidden">
                         <div className="flex gap-14 text-black">
-                            <div className="relative">
+                            <motion.div className="relative"
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.4, delay: 0.23 }}
+                            >
                                 <Link href={'#about-me'} className="flex gap-1 about-me font-semibold">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                                         <path 
@@ -23,8 +40,16 @@ export default function Header() {
                                     </svg>
                                     About me
                                 </Link>
-                            </div>
-                            <div className="relative">
+                            </motion.div>
+                            <motion.div className="relative"
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.3, delay: 0.35 }}
+                            >
                                 <Link href={'#education'} className="flex gap-1 skills font-semibold">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0a0a0a" viewBox="0 0 256 256">
                                         <path 
@@ -33,8 +58,16 @@ export default function Header() {
                                     </svg>
                                     Education
                                 </Link>
-                            </div>
-                            <div className="relative">
+                            </motion.div>
+                            <motion.div className="relative"
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.2, delay: 0.45 }}
+                            >
                                 <Link href={'#skills'} className="flex gap-1 skills font-semibold">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                                         <path 
@@ -43,8 +76,16 @@ export default function Header() {
                                     </svg>
                                     Skills
                                 </Link>
-                            </div>
-                            <div className="relative">
+                            </motion.div>
+                            <motion.div className="relative"
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.2, delay: 0.57 }}
+                            >
                                 <Link href={'#projects'} className="flex gap-1 project font-semibold">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                                         <path 
@@ -53,8 +94,16 @@ export default function Header() {
                                     </svg>
                                     Projects
                                 </Link>
-                            </div>
-                            <div className="relative">
+                            </motion.div>
+                            <motion.div className="relative"
+                                variants={{
+                                    hidden: { opacity: 0, y: 10 },
+                                    visible: { opacity: 1, y: 0 },
+                                }}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ duration: 0.2, delay: 0.69 }}
+                            >
                                 <Link href={'#contact-info'} className="flex gap-1 project font-semibold">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 256 256">
                                         <path 
@@ -63,7 +112,7 @@ export default function Header() {
                                     </svg>
                                     Contact Me
                                 </Link>
-                            </div>
+                            </motion.div>
                         </div>
                     </nav>
                 </nav>
