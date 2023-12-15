@@ -64,7 +64,7 @@ export default function Projects() {
                         <a href="https://cafi.vercel.app/" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black rounded-full hover:bg-black hover:text-white transition-all">
                             Live demo
                         </a>
-                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black text-white bg-black rounded-full hover:bg-black hover:text-white transition-all">
+                        <a href="https://github.com/fleeforezz/Work_place/tree/main/Huflit/Coffee_1900" target="_blank" className="px-6 max-sm:px-4 py-3 max-sm:py-2 border-2 border-black text-white bg-black rounded-full hover:bg-white hover:text-black transition-all">
                             Github
                         </a>
                     </div>

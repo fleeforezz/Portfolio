@@ -13,7 +13,7 @@ export default function AboutMe() {
             </h2>
 
             <div className="flex flex-wrap md:flex-nowrap sm:flex-nowrap gap-11 py-20 align-middle items-center">
-                <Image src={"/leaf-about-me.jpg"} width={400} height={400} className="relative rounded-3xl" />
+                <Image src={"/leaf-about-me.jpg"} width={400} height={400} className="max-sm:w-128 max-sm:h-64 relative rounded-3xl" />
                 <div>
                     <div className="flex gap-10 flex-wrap relative justify-center align-middle">
                         <div className="flex flex-col gap-1 border-2 border-slate-500 rounded-3xl text-black bg-white px-[7rem] py-10 text-center items-center">
@@ -22,19 +22,19 @@ export default function AboutMe() {
                                     d="M216,96A88,88,0,1,0,72,163.83V240a8,8,0,0,0,11.58,7.16L128,225l44.43,22.21A8.07,8.07,0,0,0,176,248a8,8,0,0,0,8-8V163.83A87.85,87.85,0,0,0,216,96ZM56,96a72,72,0,1,1,72,72A72.08,72.08,0,0,1,56,96Zm16,0a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z">
                                 </path>
                             </svg>  
-                            <h4 className="font-bold text-lg">Experience</h4>
-                            <p className="text-slate-600">+2 years</p>
-                            <p className="text-slate-600">Front-End Developer</p>
+                            <h4 className="font-bold text-lg">Front-End </h4>
+                            <p className="text-slate-600">+1 years</p>
+                            <p className="text-slate-600">3 Projects</p>
                         </div>
                         <div className="flex flex-col gap-1 border-2 border-slate-500 rounded-3xl text-black bg-white px-[7rem] py-10 text-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1a1a1a" viewBox="0 0 256 256">
-                                <path 
-                                    d="M176,207.24a119,119,0,0,0,16-7.73V240a8,8,0,0,1-16,0Zm11.76-88.43-56-29.87a8,8,0,0,0-7.52,14.12L171,128l17-9.06Zm64-29.87-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V130.67L171,128l-43,22.93L43.83,106l0,0L25,96,128,41.07,231,96l-18.78,10-.06,0L188,118.94a8,8,0,0,1,4,6.93v73.64a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12Z">
-                                </path>
-                            </svg>
-                            <h4 className="font-bold text-lg">Education</h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0a0a0a" viewBox="0 0 256 256">
+                            <path 
+                                d="M221.69,199.77,160,96.92V40h8a8,8,0,0,0,0-16H88a8,8,0,0,0,0,16h8V96.92L34.31,199.77A16,16,0,0,0,48,224H208a16,16,0,0,0,13.72-24.23ZM110.86,103.25A7.93,7.93,0,0,0,112,99.14V40h32V99.14a7.93,7.93,0,0,0,1.14,4.11L183.36,167c-12,2.37-29.07,1.37-51.75-10.11-15.91-8.05-31.05-12.32-45.22-12.81ZM48,208l28.54-47.58c14.25-1.74,30.31,1.85,47.82,10.72,19,9.61,35,12.88,48,12.88a69.89,69.89,0,0,0,19.55-2.7L208,208Z">
+                            </path>
+                        </svg>
+                            <h4 className="font-bold text-lg">Back-End</h4>
                             <p className="text-slate-600">+2 years</p>
-                            <p className="text-slate-600">Back-End Developer</p>
+                            <p className="text-slate-600">HomeLab</p>
                         </div>
                     </div>
                     <p className="text-black mt-10 leading-relaxed max-w-3xl">

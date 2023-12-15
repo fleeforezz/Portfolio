@@ -12,7 +12,7 @@ export default function TechStack() {
                     Experience
                 </h2>
 
-                <div className="flex flex-wrap gap-20 max-sm:gap-10 py-20">
+                <div className="grid grid-cols-2 max-sm:grid-cols-1 max-md:grid-cols-1 gap-20 max-sm:gap-10 py-20">
                     <div className="border-2 border-slate-500 px-24 max-sm:px-10 py-16 max-sm:py-7 bg-slate-50 rounded-3xl">
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Front-End Development

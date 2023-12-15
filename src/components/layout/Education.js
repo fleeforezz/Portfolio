@@ -21,8 +21,8 @@ export default function Education() {
                     </h3>
                     <p>2022</p>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="max-sm:hidden"></div>
+                <div className="max-sm:hidden"></div>
                 <div className="p-10 max-sm:p-5 bg-white border-2 border-slate-500 rounded-3xl transition-all hover:scale-[1.05]">
                     <Image src={'/Udemy_logo.svg'} width={100} height={100} />
                     <h3 className="font-bold">
@@ -37,8 +37,8 @@ export default function Education() {
                     </h3>
                     <p>2022</p>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="max-sm:hidden"></div>
+                <div className="max-sm:hidden"></div>
                 <div className="p-10 max-sm:p-5 bg-white border-2 border-slate-500 rounded-3xl transition-all hover:scale-[1.05]">
                     <Image src={'/Udemy_logo.svg'} width={100} height={100} />
                     <h3 className="font-bold">
@@ -46,8 +46,8 @@ export default function Education() {
                     </h3>
                     <p>2023</p>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="max-sm:hidden"></div>
+                <div className="max-sm:hidden"></div>
                 <div className="p-10 max-sm:p-5 bg-white border-2 border-slate-500 rounded-3xl transition-all hover:scale-[1.05]">
                     <Image src={'/Udemy_logo.svg'} width={100} height={100} />
                     <h3 className="font-bold">
