@@ -1,7 +1,17 @@
+"use client";
 import Sparkle from "../icons/sparkle"
 import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Projects() {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["0 1", "1.33 1"],
+    });
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+
     return (
         <section id="projects" className="flex flex-col items-center px-14 max-sm:px-10 py-24 max-sm:py-5 transition-all mx-auto">
             <h3 className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline">
@@ -12,8 +22,14 @@ export default function Projects() {
                 Projects
             </h2>
 
-            <div className="projects grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 gap-10 py-20">
-                <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
+            <div className="projects grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 gap-10 py-10">
+                <motion.div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50"
+                    ref={ref}
+                    style={{
+                        scale: scaleProgress,
+                        opacity: scrollYProgress,
+                    }}
+                >
                     <Image src={'/portfolio.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Portfolio
@@ -26,9 +42,14 @@ export default function Projects() {
                             Github
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
+                <motion.div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50"
+                    style={{
+                        scale: scaleProgress,
+                        opacity: scrollYProgress,
+                    }}
+                >
                     <Image src={'/HomeLab.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         HomeLab
@@ -38,9 +59,14 @@ export default function Projects() {
                             Live demo
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
+                <motion.div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50"
+                    style={{
+                        scale: scaleProgress,
+                        opacity: scrollYProgress,
+                    }}
+                >
                     <Image src={'/Coffee-1900.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Coffee 1900
@@ -53,9 +79,14 @@ export default function Projects() {
                             Github
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50">
+                <motion.div className="flex flex-col items-center border-2 border-slate-500 p-10 rounded-3xl bg-slate-50"
+                    style={{
+                        scale: scaleProgress,
+                        opacity: scrollYProgress,
+                    }}
+                >
                     <Image src={'/Cafi.png'} width={500} height={500} className="w-64 max-sm:w-54 h-64 max-sm:h-40 object-cover rounded-3xl"/>
                     <h3 className="text-center text-3xl font-medium p-4">
                         Cafi
@@ -68,7 +99,7 @@ export default function Projects() {
                             Github
                         </a>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

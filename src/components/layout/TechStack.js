@@ -16,7 +16,7 @@ export default function TechStack() {
     })
 
     return (
-        <section id="skills" className="py-24 max-sm:py-5 overflow-x-hidden relative border">
+        <section id="skills" className="pt-24 max-sm:py-5 overflow-x-hidden relative">
             <div ref={ref} className="flex flex-col px-10 items-center">
                 <motion.p className="flex gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline"
                     variants={{
@@ -55,7 +55,7 @@ export default function TechStack() {
                         <h3 className="text-slate-600 text-center text-3xl font-bold">
                             Front-End Development
                         </h3>
-                        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-10 max-sm:gap-2 text-slate-500 text-lg p-4 max-sm:mt-5">
+                        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-10 max-sm:gap-2 text-slate-500 text-lg p-4 mt-5">
                             <div className="flex gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#00000" viewBox="0 0 256 256">
                                     <path 

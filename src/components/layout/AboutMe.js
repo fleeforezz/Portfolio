@@ -17,7 +17,7 @@ export default function AboutMe() {
     })
 
     return (
-        <section id="about-me" className="flex flex-col items-center px-20 py-24 max-sm:py-5 overflow-x-hidden">
+        <section id="about-me" className="flex flex-col items-center px-20 pt-24 max-sm:pt-5 overflow-x-hidden">
             <motion.h3 ref={ref} className="flex relative gap-3 text-slate-400 text-sm items-center bg-white px-4 py-1 rounded-full border border-outline"
                 variants={{
                     hidden: { opacity: 0, y: 10 },
