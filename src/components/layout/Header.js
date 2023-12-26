@@ -130,8 +130,8 @@ export default function Header() {
                 </nav>
             </div>
 
-            <div style={{ display: isShown ? 'block' : 'none' }}>
-                <nav className="flex fixed top-0 right-0 h-screen w-1/3 nav-noise flex-col items-center justify-around mx-auto p-4 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
+            <div style={{ display: isShown ? 'none' : 'block' }}>
+                <nav className="hidden max-md:flex fixed top-0 right-0 h-screen w-1/3 nav-noise flex-col items-center justify-around mx-auto p-4 backdrop-blur shadow-sm shadow-navigation_box_shadow z-50">
                     <button onClick={handleClick} className="absolute top-3 right-3">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
