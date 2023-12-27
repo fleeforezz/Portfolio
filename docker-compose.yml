@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio
+    ports:
+      - '9463:9463'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
