@@ -4,8 +4,6 @@
 
 body {
     background-color: #FAFAF9;
-    /* height: 100vh; */
-    overflow-x: hidden;
 }
 
 .outline-text {
@@ -196,5 +194,5 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 15%;
-    /* padding-top: 100px; */
+    padding-top: 100px;
 }

@@ -1,4 +1,3 @@
-import Scroll from '@/components/SmoothScroll/SmoothScroll'
 import './globals.css'
 
 export const metadata = {
@@ -10,7 +9,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className='cursor-default'>
-        {/* <Scroll /> */}
         {children}
       </body>
     </html>

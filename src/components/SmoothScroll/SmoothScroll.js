@@ -1,74 +1,57 @@
-// "use client";
-// import React, { useEffect, useRef } from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 
 // import "./SmoothScroll.css";
-// import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../hooks/useWindowSize";
 
-// const SmoothScroll = ({ children }) => {
-//     // 1.
-//     const windowSize = useWindowSize();
+const SmoothScroll = ({ children }) => {
+    // 1.
+    const windowSize = useWindowSize();
 
-//     //2.
-//     const scrollingContainerRef = useRef();
+    //2.
+    const scrollingContainerRef = useRef();
 
-//     // 3.
-//     const data = {
-//         ease: 0.05,
-//         current: 0,
-//         previous: 0,
-//         rounded: 0,
-//     };
+    // 3.
+    const data = {
+        ease: 0.05,
+        current: 0,
+        previous: 0,
+        rounded: 0,
+    };
 
-//     // 4.
-//     useEffect(() => {
-//         setBodyHeight();
-//     }, [windowSize.height]);
+    // 4.
+    useEffect(() => {
+        setBodyHeight();
+    }, [windowSize.height]);
 
-//     const setBodyHeight = () => {
-//         document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height
-//             }px`;
-//     };
+    const setBodyHeight = () => {
+        document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height
+            }px`;
+    };
 
-//     // 5.
-//     useEffect(() => {
-//         requestAnimationFrame(() => smoothScrollingHandler());
-//     }, []);
+    // 5.
+    useEffect(() => {
+        requestAnimationFrame(() => smoothScrollingHandler());
+    }, []);
 
-//     const smoothScrollingHandler = () => {
-//         data.current = window.scrollY;
-//         data.previous += (data.current - data.previous) * data.ease;
-//         data.rounded = Math.round(data.previous * 100) / 100;
+    const smoothScrollingHandler = () => {
+        data.current = window.scrollY;
+        data.previous += (data.current - data.previous) * data.ease;
+        data.rounded = Math.round(data.previous * 100) / 100;
 
-//         scrollingContainerRef.current.style.transform = `translateY(-${data.previous}px)`;
+        scrollingContainerRef.current.style.transform = `translateY(-${data.previous}px)`;
 
-//         // Recursive call
-//         requestAnimationFrame(() => smoothScrollingHandler());
-//     };
+        // Recursive call
+        requestAnimationFrame(() => smoothScrollingHandler());
+    };
 
-//     return (
-//         <div className="parent">
-//             <div ref={scrollingContainerRef}>
-//                 {children}
-//             </div>
-//         </div>
-//     );
-// };
+    return (
+        <div className="fixed">
+            <div ref={scrollingContainerRef}>
+                <div>{children}</div>
+            </div>
+        </div>
+    );
+};
 
-// export default SmoothScroll;
-
-// "use client"
-// import { useEffect } from "react";
-// import Scrollbar from 'smooth-scrollbar';
-
-// var options = {
-//     damping: 0.07,
-// }
-
-// const Scroll = () => {
-//     useEffect(() => {
-//         Scrollbar.init(document.body, options);
-//     }, [])
-//     return null;
-// }
-
-// export default Scroll;
+export default SmoothScroll;

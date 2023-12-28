@@ -51,7 +51,7 @@ export default function Hero() {
         <section id="hero" className="py-20 max-md:pt-64 max-md:py-36">
             <motion.img
                 src="/hero-img.jpg"
-                className="absolute w-[45%] top-[50%] left-[5%] max-md:h-[50%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
+                className="absolute w-[45%] top-[4.5%] left-[5%] max-md:h-[50%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
                 variants={img}
                 initial="hidden"
                 animate="visible"

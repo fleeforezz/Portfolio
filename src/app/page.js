@@ -6,23 +6,21 @@ import Header from '@/components/layout/Header'
 import Hero from '@/components/layout/Hero'
 import Projects from '@/components/layout/Projects'
 import Services from '@/components/layout/Services'
-import Scroll from '@/components/SmoothScroll/SmoothScroll'
 
 import SmoothScroll from '@/components/SmoothScroll/SmoothScroll'
 
 export default function Home() {
   return (
     <>
-      {/* <SmoothScroll> */}
-        {/* <Scroll /> */}
         <Header />
+      <SmoothScroll>
         <Hero />
         <Aboutme />
         <Services />
         <Projects />
         <Contact />
         <Footer />
-      {/* </SmoothScroll> */}
+      </SmoothScroll>
     </>
   )
 }
