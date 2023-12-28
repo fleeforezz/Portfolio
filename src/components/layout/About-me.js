@@ -18,24 +18,25 @@ export default function Aboutme() {
             <div className="flex max-md:flex-wrap">
                 <img src="/profile-image.JPG" className="w-[47%] max-md:w-[100%]" />
                 <div className="px-10 max-md:px-0">
-                    <h3 className="font-bold text-6xl max-md:text-[7vw] max-md:mt-10">
-                        A brief intro, who am I?
-                    </h3>
-
-                    <p className="text-[1.875vw] max-md:text-[4vw] mt-10">
-                    I am an independent frontend developer, UI/UX designer 
-                    and creator based in Melbourne, Australia.
-                    <br></br>
-                    <br></br>
-                    I specialize in crafting elevated, intuitive, and 
-                    minimalistic designs for startups and small businesses 
-                    to help them stand out in the digital landscape with a powerful impact. 😎
-                    <br></br>
-                    <br></br>
-                    When I am not developing or designing, I enjoy creating 
-                    videos that talk about frontend development, productivity 
-                    and design on YouTube 📸
-                    </p>
+                    <span className="about-me-para">
+                        <h3 className="font-bold text-6xl max-md:text-[7vw] max-md:mt-10">
+                            A brief intro, who am I?
+                        </h3>
+                        <p className="text-[1.875vw] max-md:text-[4vw] mt-10">
+                        I am an independent frontend developer, UI/UX designer
+                        and creator based in Melbourne, Australia.
+                        <br></br>
+                        <br></br>
+                        I specialize in crafting elevated, intuitive, and
+                        minimalistic designs for startups and small businesses
+                        to help them stand out in the digital landscape with a powerful impact. 😎
+                        <br></br>
+                        <br></br>
+                        When I am not developing or designing, I enjoy creating
+                        videos that talk about frontend development, productivity
+                        and design on YouTube 📸
+                        </p>
+                    </span>
                 </div>
             </div>
         </section>
