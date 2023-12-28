@@ -1,6 +1,27 @@
+"use client";
+import { motion } from "framer-motion";
+
+// Navbar animation
+const navbar = {
+    hidden: {
+        y:-60,
+    },
+    visible: {
+        y:0,
+        transition: {
+            duration: 0.7,
+            delay: 1.8,
+        }
+    }
+}
+
 export default function Header() {
     return (
-        <main className="flex fixed w-[100%] justify-between items-center px-5 py-3 bg-[#FAFAF9] z-50">
+        <motion.main className="flex fixed w-[100%] justify-between items-center px-5 py-3 bg-[#FAFAF9] z-50"
+            variants={navbar}
+            initial="hidden"
+            animate="visible"
+        >
             <div className="flex align-middle">
                 <a href="#hero" className="font-bold text-xl">
                     Nhat Truong</a>
@@ -20,6 +41,6 @@ export default function Header() {
                     Let's Talk
                 </a>
             </div>
-        </main>
+        </motion.main>
     )
 }

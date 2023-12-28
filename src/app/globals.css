@@ -4,7 +4,7 @@
 
 body {
     background-color: #FAFAF9;
-    height: 100vh;
+    /* height: 100vh; */
     overflow-x: hidden;
 }
 
@@ -195,6 +195,6 @@ body {
 .about-me-para {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    padding-top: 100px;
+    top: 15%;
+    /* padding-top: 100px; */
 }
