@@ -12,7 +12,7 @@ import SmoothScroll from '@/components/SmoothScroll/SmoothScroll'
 export default function Home() {
   return (
     <>
-      <SmoothScroll>
+      {/* <SmoothScroll> */}
         <Header />
         <Hero />
         <Aboutme />
@@ -20,7 +20,7 @@ export default function Home() {
         <Projects />
         <Contact />
         <Footer />
-      </SmoothScroll>
+      {/* </SmoothScroll> */}
     </>
   )
 }

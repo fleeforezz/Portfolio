@@ -2,6 +2,13 @@ import React, { useEffect, useRef } from "react";
 
 import "./SmoothScroll.css";
 import useWindowSize from "../../hooks/useWindowSize";
+import Header from "../layout/Header";
+import Aboutme from "../layout/About-me";
+import Hero from "../layout/Hero";
+import Services from "../layout/Services";
+import Projects from "../layout/Projects";
+import Contact from "../layout/Contact";
+import Footer from "../layout/Footer";
 
 const SmoothScroll = ({ children }) => {
     // 1.
@@ -12,7 +19,7 @@ const SmoothScroll = ({ children }) => {
 
     // 3.
     const data = {
-        ease: 0.1,
+        ease: 0.05,
         current: 0,
         previous: 0,
         rounded: 0,

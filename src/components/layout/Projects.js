@@ -4,7 +4,7 @@ import { Atom, Dot } from "@phosphor-icons/react"
 export default function Projects() {
     return (
         <section id="projects" className="bg-black">
-            <div className=" px-28 max-md:px-5 max-xl:px-16">
+            <div className=" px-20 max-md:px-5 max-xl:px-16">
                 <h1 className="flex gap-3 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] pt-24 pb-10">
                     <Atom size={36} color="#8c8c73" />
                     PROJECTS
@@ -43,7 +43,7 @@ export default function Projects() {
                 </div>
             </div>
 
-            <div className="flex max-md:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-28 max-md:px-0 max-xl:px-16">
+            <div className="flex max-md:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
                 <div className="max-md:px-5">
                     <div className="pt-10 max-md:pt-7">
                         <a href="https://coffee1900.fleeforezz.me" target="_blank" className="flex w-[100%] max-w-[952px] max-h-[1192px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
@@ -107,7 +107,7 @@ export default function Projects() {
                 </div>
             </div>
 
-            <div className="flex max-md:flex-wrap gap-16 max-xl:gap-7 max-sm:gap-0 px-28 max-xl:px-16 max-md:px-0">
+            <div className="flex max-md:flex-wrap gap-16 max-xl:gap-7 max-sm:gap-0 px-20 max-xl:px-16 max-md:px-0">
                 <div className="max-md:px-5">
                     <div className=" pt-20 max-md:pt-7">
                         <a href="https://cafi.vercel.app" target="_blank" className="flex w-[100%] max-w-[1099px] max-h-[751px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
@@ -132,7 +132,7 @@ export default function Projects() {
                         <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                             Cafi
                         </h2>
-                        <h3 className="flex text-white font-thin opacity-90 text-[1.875vw] max-md:text-[4vw] items-center">
+                        <h3 className="flex text-white font-thin opacity-90 text-[1.875vw] max-md:text-[3vw] items-center">
                             Front-End Development
                             <Dot size={40} color="#ffffff" />
                             School Project
