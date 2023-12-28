@@ -107,11 +107,11 @@ export default function Projects() {
                 </div>
             </div>
 
-            <div className="flex max-md:flex-wrap gap-16 max-xl:gap-7 max-sm:gap-0 px-20 max-xl:px-16 max-md:px-0">
+            <div className="flex max-md:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
                 <div className="max-md:px-5">
                     <div className=" pt-20 max-md:pt-7">
                         <a href="https://cafi.vercel.app" target="_blank" className="flex w-[100%] max-w-[1099px] max-h-[751px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
-                            <img src="/Cafi.png" className="w-[100%] transition-all hover:scale-[1.05]" />
+                            <img src="/Cafi.png" className="w-[100%] max-md:w-[100%] transition-all hover:scale-[1.05]" />
                         </a>
                     </div>
                     <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
@@ -124,8 +124,6 @@ export default function Projects() {
                             CSS
                             <Dot size={40} color="#8c8c73" />
                             Vite
-                            <Dot size={40} color="#8c8c73" />
-                            Vercel
                         </div>
                     </div>
                     <div>
