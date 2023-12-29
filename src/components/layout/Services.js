@@ -38,6 +38,30 @@ export default function Services() {
         if (isInView) {
             mainControls.start("animate");
         }
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const body = document.querySelector('body');
+
+            if (body) {
+                if (scrollY > totalHeight * 0.5 ) {
+                    body.style.backgroundColor = 'black';
+                    body.style.color = 'white';
+                    console.log("yo")
+                }
+                if (scrollY > totalHeight * 0.92) {
+                    body.style.backgroundColor = 'white';
+                    body.style.color = 'black';
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     })
 
     return (

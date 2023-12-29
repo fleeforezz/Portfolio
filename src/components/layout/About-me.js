@@ -40,8 +40,8 @@ export default function Aboutme() {
             const scrollY = window.scrollY;
 
             // Define the scroll position at which you want to change the background color
-            const scrollThreshold = 800; // Change this value to your desired scroll position
-            const above = 1000;
+            const scrollThreshold = 825; // Change this value to your desired scroll position
+            const above = 1500;
 
             // Access the body element and change its background color based on the scroll position
             const body = document.querySelector('body');
@@ -49,13 +49,14 @@ export default function Aboutme() {
                 if (scrollY > scrollThreshold) {
                     body.style.backgroundColor = 'black';
                     body.style.color = 'white'; // Change to your desired color
-                } else {
+                } 
+                if (scrollY < scrollThreshold) {
                     body.style.backgroundColor = 'white';
                     body.style.color = 'black';
                 }
                 if (scrollY > above) {
                     body.style.backgroundColor = 'white';
-                    body.style.color = 'black'; // Change to your default color
+                    body.style.color = 'black';
                 }
             }
         };
@@ -71,7 +72,7 @@ export default function Aboutme() {
 
     return (
         <section className="px-20 max-md:px-5 pt-28">
-            <h1 className="font-medium text-[#8c8c73] text-[6vw] max-md:text-[7vw] leading-[6vw]">
+            <h1 className="font-medium text-[#d1d1c7] text-[6vw] max-md:text-[7vw] leading-[6vw]">
                 I have studied web development for a year, and during this time,
                 I realized I have passionate in designing user interfaces for websites.
             </h1>

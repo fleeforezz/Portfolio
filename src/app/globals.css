@@ -7,6 +7,13 @@ body {
     transition: background-color 0.7s ease;
 }
 
+#navbar {
+    transition: background-color 0.7s ease;
+}
+#nav {
+    transition: background-color 0.7s ease;
+}
+
 .outline-text {
     font: 800 10vw Inter, Arial;
     -webkit-text-fill-color: transparent;

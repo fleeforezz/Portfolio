@@ -1,37 +1,7 @@
 "use client"
-import { Triangle, Dot } from "@phosphor-icons/react"
-import { useEffect, useRef } from "react";
+import { Dot } from "@phosphor-icons/react"
 
 export default function Projects() {
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-
-            // Define the scroll position at which you want to change the background color
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-            // Access the body element and change its background color based on the scroll position
-            const body = document.querySelector('body');
-            if (body) {
-                if (scrollY > totalHeight * 0.53) {
-                    body.style.backgroundColor = 'black';
-                    body.style.color = 'white';
-                } 
-                if (scrollY > totalHeight * 0.96) {
-                    body.style.backgroundColor = 'white';
-                    body.style.color = 'black';
-                }
-            }
-        };
-
-        // Add event listener for scroll
-        window.addEventListener('scroll', handleScroll);
-
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    })
     return (
         <section id="projects" className=" pt-10 pb-24">
             <div className="px-20 max-md:px-5 max-xl:px-16">
