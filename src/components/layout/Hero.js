@@ -48,10 +48,10 @@ const letterAnimation = {
 
 export default function Hero() {
     return (
-        <section id="hero" className="py-20 max-md:pt-64 max-md:py-36">
+        <section id="hero" className="h-screen py-20 max-md:pt-64 max-md:py-36">
             <motion.img
                 src="/hero-img.jpg"
-                className="absolute w-[45%] top-[4.5%] left-[5%] max-md:top-[5%] max-md:left-[1%] max-md:w-[50%] max-md:h-[4%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
+                className="absolute w-[45%] top-[50%] left-[5%] max-md:top-[5%] max-md:left-[1%] max-md:w-[50%] max-md:h-[4%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
                 variants={img}
                 initial="hidden"
                 animate="visible"

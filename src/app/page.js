@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <>
         <Header />
-      <SmoothScroll>
+      {/* <SmoothScroll> */}
         <Hero />
         <Aboutme />
         <Services />
         <Projects />
         <Contact />
         <Footer />
-      </SmoothScroll>
+      {/* </SmoothScroll> */}
     </>
   )
 }

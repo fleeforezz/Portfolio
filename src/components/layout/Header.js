@@ -1,10 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 // Navbar animation
 const navbar = {
     hidden: {
-        y:-60,
+        y:-75,
     },
     visible: {
         y:0,
