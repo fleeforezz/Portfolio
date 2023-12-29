@@ -17,7 +17,7 @@ const navbar = {
 
 export default function Header() {
     return (
-        <motion.main className="flex fixed w-[100%] justify-between items-center px-5 py-3 bg-[#FAFAF9] z-50"
+        <motion.main className="flex fixed w-[100%] justify-between items-center px-5 py-3  z-50"
             variants={navbar}
             initial="hidden"
             animate="visible"

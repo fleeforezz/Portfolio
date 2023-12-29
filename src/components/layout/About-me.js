@@ -1,7 +1,6 @@
 "use client";
-import { Triangle } from "@phosphor-icons/react";
 import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation, useScroll } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 // About me paragragh animation
 const banner = {
@@ -36,6 +35,38 @@ export default function Aboutme() {
         if (isInView) {
             mainControls.start("animate");
         }
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            // Define the scroll position at which you want to change the background color
+            const scrollThreshold = 800; // Change this value to your desired scroll position
+            const above = 1000;
+
+            // Access the body element and change its background color based on the scroll position
+            const body = document.querySelector('body');
+            if (body) {
+                if (scrollY > scrollThreshold) {
+                    body.style.backgroundColor = 'black';
+                    body.style.color = 'white'; // Change to your desired color
+                } else {
+                    body.style.backgroundColor = 'white';
+                    body.style.color = 'black';
+                }
+                if (scrollY > above) {
+                    body.style.backgroundColor = 'white';
+                    body.style.color = 'black'; // Change to your default color
+                }
+            }
+        };
+
+        // Add event listener for scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     })
 
     return (

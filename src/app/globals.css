@@ -4,6 +4,7 @@
 
 body {
     background-color: #FAFAF9;
+    transition: background-color 0.7s ease;
 }
 
 .outline-text {
