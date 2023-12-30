@@ -51,7 +51,7 @@ export default function Hero() {
         <section id="hero" className="h-screen py-20 max-md:pt-64 max-md:py-36">
             <motion.img
                 src="/hero-img.jpg"
-                className="absolute w-[45%] top-[50%] left-[5%] max-md:top-[5%] max-md:left-[1%] max-md:w-[50%] max-md:h-[4%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
+                className="absolute w-[45%] top-[50%] left-[5%] max-md:top-[50%] max-md:left-[0%] max-md:w-[50%] max-md:h-[50%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
                 variants={img}
                 initial="hidden"
                 animate="visible"
@@ -80,6 +80,16 @@ export default function Hero() {
                     HEY, I'M NHAT
                 </motion.h1>
             </motion.div>
+
+            {/* <div className="absolute bottom-0 right-4 bounce">
+                <a href="#about-me" className="text-black px-3 py-2 border-2 border-black rounded-[20px]"></a>
+                <span className="absolute left-[0.65rem] top-[0.5rem] bg-black px-[4px] py-[4px] rounded-full bounce"></span>
+            </div> */}
+
+            <div className="absolute bottom-20 right-0 rotate-90">
+                <span className="font-medium">scroll</span>
+                <span className="absolute -bottom-[0.5rem] left-16 bg-black px-[0.7px] py-5 bounce"></span>
+            </div>
         </section>
     )
 }

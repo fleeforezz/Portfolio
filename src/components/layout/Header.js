@@ -1,6 +1,6 @@
 "use client";
-import { motion, useScroll } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 // Navbar animation
 const navbar = {
@@ -26,70 +26,58 @@ export default function Header() {
             const above = 1500;
 
             // Change color when scroll to Projects section
-            // const start = 2500;
-            // const end = 3000;
+            const start = 4700;
+            const end = 8700;
 
 
             const navigationbar = document.getElementById('navbar');
-            const nav = document.getElementById('nav');
             const letstalk = document.getElementById('lets-talk');
             if (navigationbar) {
                 // Change color when scroll to About Me section
                 if (scrollY > scrollThreshold) {
                     navigationbar.style.backgroundColor = 'black';
-                    navigationbar.style.color = 'white'; 
+                    navigationbar.style.color = '#FAFAF9'; 
                 }
                 if (scrollY < scrollThreshold) {
-                    navigationbar.style.backgroundColor = 'white';
+                    navigationbar.style.backgroundColor = '#FAFAF9';
                     navigationbar.style.color = 'black';
                 }
-                if (scrollY > above) {
-                    navigationbar.style.backgroundColor = 'white';
+                // Change color when scroll to Project section
+                if (scrollY > above && scrollY < start) {
+                    navigationbar.style.backgroundColor = '#FAFAF9';
                     navigationbar.style.color = 'black'; 
+                } if ( scrollY > end) {
+                    navigationbar.style.backgroundColor = '#FAFAF9';
+                    navigationbar.style.color = 'black';
                 }
-                // Change color when scroll to Projects section
-                // if (scrollY > initial) {
-                //     navbar.style.backgroundColor = 'black';
-                //     navbar.style.color = 'white'; 
-                // }
-                // if (scrollY < initial) {
-                //     navbar.style.backgroundColor = 'white';
-                //     navbar.style.color = 'black'; 
-                // }
-                // if (scrollY > end) {
-                //     navbar.style.backgroundColor = 'white';
-                //     navbar.style.color = 'black'; 
-                // }
             }
 
-            // if (nav) {
-            //     //Change color when scroll to Projects section
-            //     if (scrollY > start) {
-            //         navigationbar.style.backgroundColor = 'black';
-            //         navigationbar.style.color = 'white'; 
-            //     }
-            //     if (scrollY < start) {
-            //         navigationbar.style.backgroundColor = 'white';
-            //         navigationbar.style.color = 'black'; 
-            //     }
-            //     if (scrollY > end) {
-            //         navigationbar.style.backgroundColor = 'white';
-            //         navbar.style.color = 'black'; 
-            //     }
-            // }
-
             if (letstalk) {
+                // Change color when scroll to About Me section
                 if (scrollY > scrollThreshold) {
                     letstalk.style.backgroundColor = '#d1d1c7';
                     letstalk.style.color = 'black'; // Change to your desired color
                 }
                 if (scrollY < scrollThreshold) {
                     letstalk.style.backgroundColor = '#262626';
-                    letstalk.style.color = 'white'; // Change to your default color
+                    letstalk.style.color = '#d1d1c7'; // Change to your default color
                 }
-                if (scrollY > above) {
+                if (scrollY > above && scrollY < start) {
                     letstalk.style.backgroundColor = '#262626';
-                    letstalk.style.color = 'white'; // Change to your default color
+                    letstalk.style.color = '#d1d1c7'; // Change to your default color
+                }
+                // Change color when scroll to Projects section
+                if (scrollY > above && scrollY < end) {
+                    letstalk.style.backgroundColor = '#d1d1c7';
+                    letstalk.style.color = '#262626'; 
+                }
+                if (scrollY > above && scrollY < start ) {
+                    letstalk.style.backgroundColor = '#262626';
+                    letstalk.style.color = '#d1d1c7';
+                }
+                if ( scrollY > end) {
+                    letstalk.style.backgroundColor = '#262626';
+                    letstalk.style.color = '#d1d1c7';
                 }
             }
         };

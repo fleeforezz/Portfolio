@@ -39,23 +39,22 @@ export default function Aboutme() {
         const handleScroll = () => {
             const scrollY = window.scrollY;
 
-            // Define the scroll position at which you want to change the background color
-            const scrollThreshold = 825; // Change this value to your desired scroll position
+            const scrollThreshold = 825;
             const above = 1500;
 
-            // Access the body element and change its background color based on the scroll position
             const body = document.querySelector('body');
             if (body) {
+                // Change color when scroll to About Me section
                 if (scrollY > scrollThreshold) {
                     body.style.backgroundColor = 'black';
-                    body.style.color = 'white'; // Change to your desired color
+                    body.style.color = '#FAFAF9';
                 } 
                 if (scrollY < scrollThreshold) {
-                    body.style.backgroundColor = 'white';
+                    body.style.backgroundColor = '#FAFAF9';
                     body.style.color = 'black';
                 }
                 if (scrollY > above) {
-                    body.style.backgroundColor = 'white';
+                    body.style.backgroundColor = '#FAFAF9';
                     body.style.color = 'black';
                 }
             }
@@ -71,13 +70,13 @@ export default function Aboutme() {
     })
 
     return (
-        <section className="px-20 max-md:px-5 pt-28">
+        <section id="about" className="px-20 max-md:px-5 pt-28">
             <h1 className="font-medium text-[#d1d1c7] text-[6vw] max-md:text-[7vw] leading-[6vw]">
                 I have studied web development for a year, and during this time,
                 I realized I have passionate in designing user interfaces for websites.
             </h1>
 
-            <h2 id="about" className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] pt-44 max-md:pt-20 pb-10">
+            <h2 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] pt-44 max-md:pt-20 pb-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
                 </svg>
@@ -88,7 +87,7 @@ export default function Aboutme() {
             </h2>
 
             <div ref={ref} className="flex max-md:flex-wrap">
-                <img src="/profile-image.JPG" className="w-[47%] max-md:w-[100%]" />
+                <img src="/profile-image.JPG" className="w-[47%] max-md:w-[100%] max-md:scale-[1.1] max-md:object-cotain rounded-lg" />
                 <div className="px-10 max-md:px-0">
                     <motion.span className="about-me-para"
                         variants={banner}

@@ -10,8 +10,25 @@ body {
 #navbar {
     transition: background-color 0.7s ease;
 }
-#nav {
-    transition: background-color 0.7s ease;
+
+@keyframes bounce {
+
+    0%{
+        transform: scaleX(100%) rotate(90deg);
+    }
+    100% {
+        transform: scaleX(100%) rotate(90deg);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: scaleX(20%) rotate(90deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
 }
 
 .outline-text {

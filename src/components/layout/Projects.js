@@ -14,10 +14,11 @@ export default function Projects() {
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
                     </svg>
                 </h1>
+                
                 <div>
                     <a href="https://homarr.fleeforezz.me" target="_blank" className="flex flex-col items-center justify-center">
-                        <div className="flex w-[100%] max-w-[1750px]  max-h-[1000px] overflow-hidden transition-all hover:rounded-3xl">
-                            <img src="/HomeLab.png" className="w-[100%] transition-all hover:scale-[1.05]" />
+                        <div className="flex w-[100%] max-w-[1750px] max-h-[1000px] overflow-hidden transition-all hover:rounded-3xl">
+                            <img src="/HomeLab.png" className="w-[100%] object-cover transition-all hover:scale-[1.05]" />
                         </div>
                     </a>
                     <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">

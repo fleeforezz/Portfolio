@@ -1,5 +1,4 @@
 "use client"
-import { Triangle } from "@phosphor-icons/react"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react";
 
@@ -47,11 +46,10 @@ export default function Services() {
             if (body) {
                 if (scrollY > totalHeight * 0.5 ) {
                     body.style.backgroundColor = 'black';
-                    body.style.color = 'white';
-                    console.log("yo")
+                    body.style.color = '#FAFAF9';
                 }
-                if (scrollY > totalHeight * 0.92) {
-                    body.style.backgroundColor = 'white';
+                if (scrollY > totalHeight * 0.948) {
+                    body.style.backgroundColor = '#FAFAF9';
                     body.style.color = 'black';
                 }
             }

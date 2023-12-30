@@ -1,5 +1,5 @@
 "use client"
-import { Triangle, GithubLogo, LinkedinLogo, InstagramLogo } from "@phosphor-icons/react"
+import { GithubLogo, LinkedinLogo, InstagramLogo } from "@phosphor-icons/react"
 
 export default function Contact() {
     return (
