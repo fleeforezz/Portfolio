@@ -6,20 +6,20 @@ import Header from '@/components/layout/Header'
 import Hero from '@/components/layout/Hero'
 import Projects from '@/components/layout/Projects'
 import Services from '@/components/layout/Services'
+import StickyCursor from '@/components/stickyCursor/StickyCursor'
 
-import SmoothScroll from '@/components/SmoothScroll/SmoothScroll'
 import { useEffect } from 'react';
 
 export default function Home() {
-  useEffect( () => {
+  useEffect(() => {
 
     (
 
       async () => {
 
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
 
-          const locomotiveScroll = new LocomotiveScroll();
+        const locomotiveScroll = new LocomotiveScroll();
 
       }
 
@@ -29,15 +29,14 @@ export default function Home() {
 
   return (
     <>
-        <Header />
-      {/* <SmoothScroll> */}
-        <Hero />
-        <Aboutme />
-        <Services />
-        <Projects />
-        <Contact />
-        <Footer />
-      {/* </SmoothScroll> */}
+      <StickyCursor />
+      <Header />
+      <Hero />
+      <Aboutme />
+      <Services />
+      <Projects />
+      <Contact />
+      <Footer />
     </>
   )
 }

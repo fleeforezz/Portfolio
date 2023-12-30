@@ -7,6 +7,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+body, a, button {
+    cursor: none;
+}
+
 #navbar {
     transition: background-color 0.3s ease;
 }

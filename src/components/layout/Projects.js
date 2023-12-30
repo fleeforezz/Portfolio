@@ -1,11 +1,55 @@
 "use client"
 import { Dot } from "@phosphor-icons/react"
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion"
+
+// Projects heading animation
+const banner = {
+    animate: {
+        transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.4,
+        },
+    },
+}
+
+const letterAnimation = {
+    initial: {
+        y: 20,
+        opacity: 0,
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        delay: 5,
+        transition: {
+            duration: 0.3,
+        },
+    },
+}
 
 export default function Projects() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    const mainControls = useAnimation()
+
+    useEffect(() => {
+        if (isInView) {
+            mainControls.start("animate");
+        }
+    })
+
     return (
-        <section id="projects" className="pt-10">
+        <motion.section ref={ref} id="projects" className="pt-10"
+            variants={banner}
+            initial="initial"
+            animate={mainControls}
+        >
             <div className="px-20 max-md:px-5 max-xl:px-16">
-                <h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] max-sm:pb-10">
+                <motion.h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] max-sm:pb-10"
+                    variants={letterAnimation}
+                >
                     <div className="max-md:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
@@ -17,7 +61,7 @@ export default function Projects() {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
                         </svg>
                     </div>
-                </h1>
+                </motion.h1>
                 
                 <div>
                     <a href="https://homarr.fleeforezz.me" target="_blank" className="flex flex-col items-center justify-center">
@@ -177,6 +221,6 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

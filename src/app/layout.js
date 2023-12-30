@@ -8,7 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='cursor-default'>
+      <head>
+        <link rel="icon" href="./cactus-duotone.svg" />
+      </head>
+      <body className=''>
         {children}
       </body>
     </html>
