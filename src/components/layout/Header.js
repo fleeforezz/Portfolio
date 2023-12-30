@@ -26,7 +26,7 @@ export default function Header() {
             const above = 1500;
 
             // Change color when scroll to Projects section
-            const start = 5000;
+            const start = 4900;
             const end = 8900;
 
 

@@ -4,11 +4,11 @@
 
 body {
     background-color: #FAFAF9;
-    transition: background-color 0.7s ease;
+    transition: background-color 0.3s ease;
 }
 
 #navbar {
-    transition: background-color 0.7s ease;
+    transition: background-color 0.3s ease;
 }
 
 @keyframes bounce {

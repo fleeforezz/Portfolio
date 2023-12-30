@@ -64,14 +64,18 @@ export default function Services() {
 
     return (
         <section id="services" className="px-20 max-md:px-5">
-            <h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] pt-24 pb-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
-                </svg>
+            <h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] pt-24 max-sm:pt-10">
+                <div className="max-md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
+                    </svg>
+                </div>
                 SERVICES
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
-                </svg>
+                <div className="max-md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
+                    </svg>
+                </div>
             </h1>
 
             <div ref={ref} className="grid grid-cols-2 gap-16 max-md:gap-10 max-md:grid-cols-1">
