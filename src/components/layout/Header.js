@@ -26,8 +26,8 @@ export default function Header() {
             const above = 1500;
 
             // Change color when scroll to Projects section
-            const start = 4700;
-            const end = 8700;
+            const start = 5000;
+            const end = 8900;
 
 
             const navigationbar = document.getElementById('navbar');
@@ -35,7 +35,7 @@ export default function Header() {
             if (navigationbar) {
                 // Change color when scroll to About Me section
                 if (scrollY > scrollThreshold) {
-                    navigationbar.style.backgroundColor = 'black';
+                    navigationbar.style.backgroundColor = '#0e0e0c';
                     navigationbar.style.color = '#FAFAF9'; 
                 }
                 if (scrollY < scrollThreshold) {

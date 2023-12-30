@@ -46,19 +46,19 @@ export default function Contact() {
                             My Digital Spaces
                         </h2>
                         <div className="text-[1.5vw] max-md:text-[3.5vw] text-gray-500 mt-5">
-                            <a href="" className="flex gap-2">
+                            <a href="" className="flex items-center gap-2">
                                 <GithubLogo size={36} color="#0a0a0a" />
                                 <span className="github relative">
                                     Github
                                 </span>
                             </a>
-                            <a href="" className="linkedin flex gap-2 mt-5 mb-5">
+                            <a href="" className="linkedin flex items-center gap-2 mt-5 mb-5">
                                 <LinkedinLogo size={36} color="#0a0a0a" />
                                 <span className="linkedin relative">
                                     LinkedIn
                                 </span>
                             </a>
-                            <a href="" className="insta flex gap-2">
+                            <a href="" className="insta flex items-center gap-2">
                                 <InstagramLogo size={36} color="#0a0a0a" />
                                 <span className="insta relative">
                                     Instagram

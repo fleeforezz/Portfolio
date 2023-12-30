@@ -44,8 +44,8 @@ export default function Services() {
             const body = document.querySelector('body');
 
             if (body) {
-                if (scrollY > totalHeight * 0.5 ) {
-                    body.style.backgroundColor = 'black';
+                if (scrollY > totalHeight * 0.52 ) {
+                    body.style.backgroundColor = '#0e0e0c';
                     body.style.color = '#FAFAF9';
                 }
                 if (scrollY > totalHeight * 0.948) {
@@ -74,7 +74,7 @@ export default function Services() {
                 </svg>
             </h1>
 
-            <div ref={ref} className="grid grid-cols-2 gap-24 max-md:gap-10 max-md:grid-cols-1">
+            <div ref={ref} className="grid grid-cols-2 gap-16 max-md:gap-10 max-md:grid-cols-1">
                 <motion.div
                     variants={banner}
                     initial="initial"
@@ -83,14 +83,14 @@ export default function Services() {
                     <motion.h2 className="font-bold text-[4.5vw] max-md:text-[7vw]"
                         variants={letterAnimation}
                     >
-                        my expertises.
+                        My expertises.
                     </motion.h2>
-                    <motion.p className="text-[1.875vw] max-md:text-[4vw] mt-10"
+                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10"
                         variants={letterAnimation}
                     >
                         I focus on all things design and web related.
                         With each of my services, my goal is to deliver
-                        an impactful and elevating digital experience for everyone.
+                        smooth experience for user.
                     </motion.p>
                 </motion.div>
 
@@ -102,12 +102,11 @@ export default function Services() {
                     animate={mainControls}
                 >
                     <span>
-                        <motion.h3 variants={letterAnimation}>Web</motion.h3>
-                        <motion.h3 variants={letterAnimation}>Development</motion.h3>
+                        <motion.h3 variants={letterAnimation}>Web Development</motion.h3>
                         <motion.h3 variants={letterAnimation}>Web Design</motion.h3>
                         <motion.h3 variants={letterAnimation}>Wireframing</motion.h3>
-                        <motion.h3 variants={letterAnimation}>UI/UX Design</motion.h3>
-                        <motion.h3 variants={letterAnimation}>Branding</motion.h3>
+                        <motion.h3 variants={letterAnimation}>Server</motion.h3>
+                        <motion.h3 variants={letterAnimation}>Infrastructure</motion.h3>
                     </span>
                 </motion.div>
 
@@ -119,9 +118,9 @@ export default function Services() {
                     <motion.h2 className="font-bold text-[4.5vw] max-md:text-[7vw]"
                         variants={letterAnimation}
                     >
-                        my digital tool box.
+                        My digital tool box.
                     </motion.h2>
-                    <motion.p className="text-[1.875vw] max-md:text-[4vw] mt-10"
+                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10"
                         variants={letterAnimation}
                     >
                         These are my go to tech stack to make any projects happen.
@@ -141,9 +140,13 @@ export default function Services() {
                     <motion.h3 variants={letterAnimation}>HTML</motion.h3>
                     <motion.h3 variants={letterAnimation}>CSS</motion.h3>
                     <motion.h3 variants={letterAnimation}>Figma</motion.h3>
-                    <motion.h3 variants={letterAnimation}>Webflow</motion.h3>
                     <motion.h3 variants={letterAnimation}>TailwindCSS</motion.h3>
                     <motion.h3 variants={letterAnimation}>ReactJS</motion.h3>
+                    <motion.h3 variants={letterAnimation}>MySQL</motion.h3>
+                    <motion.h3 variants={letterAnimation}>Docker</motion.h3>
+                    <motion.h3 variants={letterAnimation}>Kubernetes</motion.h3>
+                    <motion.h3 variants={letterAnimation}>Git</motion.h3>
+                    <motion.h3 variants={letterAnimation}>GitLab</motion.h3>
                 </motion.div>
             </div>
         </section>

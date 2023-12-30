@@ -81,11 +81,6 @@ export default function Hero() {
                 </motion.h1>
             </motion.div>
 
-            {/* <div className="absolute bottom-0 right-4 bounce">
-                <a href="#about-me" className="text-black px-3 py-2 border-2 border-black rounded-[20px]"></a>
-                <span className="absolute left-[0.65rem] top-[0.5rem] bg-black px-[4px] py-[4px] rounded-full bounce"></span>
-            </div> */}
-
             <div className="absolute bottom-20 right-0 rotate-90">
                 <span className="font-medium">scroll</span>
                 <span className="absolute -bottom-[0.5rem] left-16 bg-black px-[0.7px] py-5 bounce"></span>
