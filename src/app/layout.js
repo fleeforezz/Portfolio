@@ -9,7 +9,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="./cactus-duotone.svg" />
+        <link
+          rel="icon"
+          href="/cactus-duotone.svg"
+          type="favicon"
+          sizes="32x32"
+        />
       </head>
       <body className=''>
         {children}
