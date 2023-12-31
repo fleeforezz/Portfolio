@@ -8,9 +8,6 @@ export const theme = {
   extend: {
     colors: {
     },
-    cursor: {
-      'default': 'url(/dot-outline-fill.svg), default',
-    }
   },
 };
 export const plugins = [];

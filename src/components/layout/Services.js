@@ -37,29 +37,6 @@ export default function Services() {
         if (isInView) {
             mainControls.start("animate");
         }
-
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const body = document.querySelector('body');
-
-            if (body) {
-                if (scrollY > totalHeight * 0.52) {
-                    body.style.backgroundColor = '#0e0e0c';
-                    body.style.color = '#FAFAF9';
-                }
-                if (scrollY > totalHeight * 0.948) {
-                    body.style.backgroundColor = '#FAFAF9';
-                    body.style.color = 'black';
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
     })
 
     return (

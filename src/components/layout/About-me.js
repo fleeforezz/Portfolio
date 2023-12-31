@@ -38,24 +38,22 @@ export default function Aboutme() {
 
         const handleScroll = () => {
             const scrollY = window.scrollY;
-
-            const scrollThreshold = 825;
-            const above = 1500;
-
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             const body = document.querySelector('body');
+
             if (body) {
                 // Change color when scroll to About Me section
-                if (scrollY > scrollThreshold) {
+                if (scrollY > totalHeight * 0.07 && scrollY < totalHeight * 0.15) {
                     body.style.backgroundColor = '#0e0e0c';
                     body.style.color = '#FAFAF9';
-                } 
-                if (scrollY < scrollThreshold) {
+                } else {
                     body.style.backgroundColor = '#FAFAF9';
                     body.style.color = 'black';
                 }
-                if (scrollY > above) {
-                    body.style.backgroundColor = '#FAFAF9';
-                    body.style.color = 'black';
+
+                if (scrollY > totalHeight * 0.52 && scrollY < totalHeight * 0.948) {
+                    body.style.backgroundColor = '#0e0e0c';
+                    body.style.color = '#FAFAF9';
                 }
             }
         };

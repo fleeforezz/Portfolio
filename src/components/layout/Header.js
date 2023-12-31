@@ -22,62 +22,38 @@ export default function Header() {
             const scrollY = window.scrollY;
 
             // Change color when scroll to About Me section
-            const scrollThreshold = 825;
-            const above = 1500;
+            // const scrollThreshold = 825;
+            // const above = 1500;
 
             // Change color when scroll to Projects section
-            const start = 4900;
-            const end = 8900;
+            // const start = 4900;
+            // const end = 8900;
 
-
+            // Test
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
             const navigationbar = document.getElementById('navbar');
             const letstalk = document.getElementById('lets-talk');
+
             if (navigationbar) {
                 // Change color when scroll to About Me section
-                if (scrollY > scrollThreshold) {
+                if (scrollY > totalHeight * 0.07 && scrollY < totalHeight * 0.15) {
                     navigationbar.style.backgroundColor = '#0e0e0c';
                     navigationbar.style.color = '#FAFAF9'; 
-                }
-                if (scrollY < scrollThreshold) {
+                    letstalk.style.backgroundColor = '#d1d1c7';
+                    letstalk.style.color = 'black';
+                } else {
                     navigationbar.style.backgroundColor = '#FAFAF9';
                     navigationbar.style.color = 'black';
-                }
-                // Change color when scroll to Project section
-                if (scrollY > above && scrollY < start) {
-                    navigationbar.style.backgroundColor = '#FAFAF9';
-                    navigationbar.style.color = 'black'; 
-                } if ( scrollY > end) {
-                    navigationbar.style.backgroundColor = '#FAFAF9';
-                    navigationbar.style.color = 'black';
-                }
-            }
-
-            if (letstalk) {
-                // Change color when scroll to About Me section
-                if (scrollY > scrollThreshold) {
-                    letstalk.style.backgroundColor = '#d1d1c7';
-                    letstalk.style.color = 'black'; // Change to your desired color
-                }
-                if (scrollY < scrollThreshold) {
-                    letstalk.style.backgroundColor = '#262626';
-                    letstalk.style.color = '#d1d1c7'; // Change to your default color
-                }
-                if (scrollY > above && scrollY < start) {
-                    letstalk.style.backgroundColor = '#262626';
-                    letstalk.style.color = '#d1d1c7'; // Change to your default color
-                }
-                // Change color when scroll to Projects section
-                if (scrollY > above && scrollY < end) {
-                    letstalk.style.backgroundColor = '#d1d1c7';
-                    letstalk.style.color = '#262626'; 
-                }
-                if (scrollY > above && scrollY < start ) {
                     letstalk.style.backgroundColor = '#262626';
                     letstalk.style.color = '#d1d1c7';
                 }
-                if ( scrollY > end) {
-                    letstalk.style.backgroundColor = '#262626';
-                    letstalk.style.color = '#d1d1c7';
+                
+                if (scrollY > totalHeight * 0.52 && scrollY < totalHeight * 0.948) {
+                    navigationbar.style.backgroundColor = '#0e0e0c';
+                    navigationbar.style.color = '#FAFAF9'; 
+                    letstalk.style.backgroundColor = '#d1d1c7';
+                    letstalk.style.color = 'black';
                 }
             }
         };
