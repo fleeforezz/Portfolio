@@ -11,10 +11,13 @@ export default function StickyCursor({ stickyElement }) {
         y: useMotionValue(0)
     }
 
-    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 }
+    // const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 }
     const smoothMouse = {
-        x: useSpring(mouse.x, smoothOptions),
-        y: useSpring(mouse.y, smoothOptions)
+        // Sping effect
+        // x: useSpring(mouse.x),
+        // y: useSpring(mouse.y)
+        x: mouse.x,
+        y: mouse.y
     }
 
     const manageMouseMove = e => {
