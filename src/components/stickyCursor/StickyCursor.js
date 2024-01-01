@@ -1,6 +1,7 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './style.module.scss';
+import './cursor.css';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function StickyCursor({ stickyElement }) {
@@ -45,3 +46,45 @@ export default function StickyCursor({ stickyElement }) {
         </div>
     )
 }
+
+// export default function StickyCursor() {
+//     const cursorSize = 15;
+//     const [mousePosition, setMousePosition] = useState({
+//         x: 0,
+//         y: 0,
+//     })
+//     console.log(mousePosition)
+    
+//     useEffect(() => {
+//         const mouseMove = e => {
+//             const { clientX, clientY } = e
+//             setMousePosition({
+//                 x: e.clientX - cursorSize/2,
+//                 y: e.clientY - cursorSize/2,
+//             })
+//         }
+
+//         window.addEventListener("mousemove", mouseMove);
+
+//         return () => {
+//             window.removeEventListener("mousemove", mouseMove)
+//         }
+//     }, []);
+
+//     const variants = {
+//         default: {
+//             x: mousePosition.x,
+//             y: mousePosition.y,
+//         }
+//     }
+
+//     return (
+//         <div>
+//             <motion.div 
+//                 className='cursor'
+//                 variants={variants}
+//                 animate="default"
+//             ></motion.div>
+//         </div>
+//     )
+// }
