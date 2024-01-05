@@ -51,7 +51,7 @@ export default function Aboutme() {
                     body.style.color = 'black';
                 }
 
-                if (scrollY > totalHeight * 0.52 && scrollY < totalHeight * 0.948) {
+                if (scrollY > totalHeight * 0.50 && scrollY < totalHeight * 0.948) {
                     body.style.backgroundColor = '#0e0e0c';
                     body.style.color = '#FAFAF9';
                 }

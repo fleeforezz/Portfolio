@@ -20,16 +20,6 @@ export default function Header() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-
-            // Change color when scroll to About Me section
-            // const scrollThreshold = 825;
-            // const above = 1500;
-
-            // Change color when scroll to Projects section
-            // const start = 4900;
-            // const end = 8900;
-
-            // Test
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             
             const navigationbar = document.getElementById('navbar');
@@ -49,7 +39,7 @@ export default function Header() {
                     letstalk.style.color = '#d1d1c7';
                 }
                 
-                if (scrollY > totalHeight * 0.52 && scrollY < totalHeight * 0.948) {
+                if (scrollY > totalHeight * 0.50 && scrollY < totalHeight * 0.948) {
                     navigationbar.style.backgroundColor = '#0e0e0c';
                     navigationbar.style.color = '#FAFAF9'; 
                     letstalk.style.backgroundColor = '#d1d1c7';
