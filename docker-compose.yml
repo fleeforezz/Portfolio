@@ -9,6 +9,6 @@ services:
     ports:
       - '9463:9463'
     volumes:
-      - .:/app
+      - /App/Portfolio:/app
       - /app/node_modules
     restart: unless-stopped
