@@ -6,9 +6,9 @@ COPY package*.json ./
 
 RUN npm install
 
-RUN yarn build
-
 COPY . .
+
+RUN yarn build
 
 EXPOSE 9463
 
