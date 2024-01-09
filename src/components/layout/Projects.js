@@ -195,7 +195,7 @@ export default function Projects() {
                     <div className="max-md:px-5 max-md:pt-7">
                         <div>
                             <div className="flex w-[100%] max-w-[660px] max-h-[560px] mt-5 overflow-hidden transition-all hover:rounded-3xl">
-                                <img src="/Contact-page.png" className="w-[100%] transition-all hover:scale-[1.05]" />
+                                <img src="/Contact-page.png" className="w-[100%] max-md:w-[1000px] transition-all hover:scale-[1.05]" />
                             </div>
                         </div>
                         <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
