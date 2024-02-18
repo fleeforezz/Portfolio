@@ -74,27 +74,29 @@ export default function Aboutme() {
             animate={mainControls}
         >
             <h1 className="font-medium text-[#d1d1c7] text-[6vw] max-md:text-[7vw] max-sm:text-5xl leading-[6vw] pt-24 max-md:pt-0 pb-24 max-md:pb-14">
-            I design top-notch minimalist interfaces and optimize software development for swift, high-quality delivery.
+                I design top-notch minimalist interfaces and optimize software development for swift, high-quality delivery.
             </h1>
 
-            <motion.h2 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] pt-44 max-md:pt-20"
+            <motion.div className="flex gap-10 justify-center items-center pt-44"
                 variants={letterAnimation}
             >
-                <div className="max-md:hidden overflow-hidden">
+                <span className="max-md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
                     </svg>
-                </div>
-                ABOUT ME
-                <div className="max-md:hidden">
+                </span>
+                <h2 className="font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] max-md:pt-20">
+                    ABOUT ME
+                </h2>
+                <span className="max-md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 200 200" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M200 150C200 94.7715 155.228 50 100 50C44.7715 50 0 94.7715 0 150H200Z" fill="#8c8c73" />
                     </svg>
-                </div>
-            </motion.h2>
+                </span>
+            </motion.div>
 
             <div ref={ref} className="flex max-md:flex-wrap">
-                <img src="/profile-image.JPG" className="w-[47%] max-md:w-[100%] rounded-lg" />
+                <img src="/profile-image.JPG" className="w-[47%] max-md:w-[100%] max-md:h-[500px] max-md:object-cover max-sm:w-[100%] max-sm:h-[50vh] max-sm:object-cover rounded-lg" />
                 <div className="px-10 max-md:px-0">
                     <motion.span className="about-me-para">
                         <motion.h3 className="font-bold text-6xl max-md:text-[7vw] max-md:mt-10"

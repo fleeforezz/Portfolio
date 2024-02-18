@@ -1,0 +1,72 @@
+stages:
+  - build
+  # - test
+  - docker-build
+  - deploy
+
+build:
+  stage: build
+  image: node
+  script: 
+    - echo "Start building App"
+    - npm install
+    - npm run build
+    - echo "Build successfully!"
+
+# test:
+#   stage: test
+#   image: node
+#   script:
+#     - echo "Testing App"
+#     - CI=true npm test
+#     - echo "Test successfully!"
+
+docker-build:
+  stage: docker-build
+  image: docker:latest
+  services: 
+      - name: docker:dind 
+        entrypoint: ["env", "-u", "DOCKER_HOST"]
+        command: ["dockerd-entrypoint.sh"]
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - echo $CI_REGISTRY
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
+    - echo "Registry image:" $CI_REGISTRY_IMAGE
+
+deploy:
+  stage: deploy
+  image: kroniak/ssh-client
+  before_script:
+    - echo "deploying app"
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+    - eval "$(ssh-agent -s)" 
+    - ssh-add ~/.ssh/id_ed25519
+    - ssh-keyscan $PROD_SERVER_IP -H  >> ~/.ssh/known_hosts
+  script:
+    # - ssh nhat@$PROD_SERVER_IP
+    - ssh nhat@$PROD_SERVER_IP "sudo docker pull fleeforezz/portfolio"
+    - ssh nhat@$PROD_SERVER_IP "sudo docker stop portfolio || true && sudo docker rm portfolio || true"
+    - ssh nhat@$PROD_SERVER_IP "sudo docker run -p 9463:9463 -d --name portfolio fleeforezz/portfolio"
+
+# deploy:
+#   stage: deploy
+#   image: kroniak/ssh-client
+#   before_script:
+#     - echo "deploying app"
+#     - mkdir -p ~/.ssh
+#     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519 
+#     - chmod 600 ~/.ssh/id_ed25519
+#     - eval "$(ssh-agent -s)" 
+#     - ssh-add ~/.ssh/id_ed25519
+#     - ssh-keyscan 116.102.23.121 -H  >> ~/.ssh/known_hosts
+#   script:
+#     - ssh nhat@116.102.23.121

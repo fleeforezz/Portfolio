@@ -2,12 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    height: 0px;
+}
+
+::-webkit-scrollbar-button {
+    height: 3px;
+    background-color: #8c8b73;
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8c8b73;
+    border-radius: 16px;
+}
+
 body {
     background-color: #FAFAF9;
     transition: background-color 0.3s ease;
 }
 
-body, a, button {
+body,
+a,
+button {
     cursor: none;
 }
 
@@ -17,9 +34,10 @@ body, a, button {
 
 @keyframes bounce {
 
-    0%{
+    0% {
         transform: scaleX(100%) rotate(90deg);
     }
+
     100% {
         transform: scaleX(100%) rotate(90deg);
         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
@@ -36,9 +54,22 @@ body, a, button {
 }
 
 .outline-text {
-    font: 800 10vw Inter, Arial;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 3px;
+    font-weight: 700;
+    font-size: 10vw;
+}
+
+.idea {
+    background: linear-gradient(to right,
+            rgb(255, 116, 116),
+            yellow,
+            rgb(142, 255, 142),
+            rgb(146, 146, 255),
+            violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 @media not all and (min-width: 768px) {
@@ -167,6 +198,26 @@ body, a, button {
 }
 
 .github::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 0%;
+    height: 2.5px;
+    background-color: black;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+.gitlab:focus::after,
+.gitlab:hover::after {
+    width: 100%;
+    left: 0%;
+    transition: 300ms;
+}
+
+.gitlab::after {
     content: "";
     position: absolute;
     bottom: 0px;

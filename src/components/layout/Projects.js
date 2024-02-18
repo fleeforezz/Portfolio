@@ -62,71 +62,100 @@ export default function Projects() {
                         </svg>
                     </div>
                 </motion.h1>
-                
+
+                {/* Homelab */}
                 <div>
-                    <a href="https://homarr.fleeforezz.me" target="_blank" className="flex flex-col items-center justify-center">
-                        <div className="flex w-[100%] max-w-[1750px] max-h-[1000px] overflow-hidden transition-all hover:rounded-3xl">
+                    <a href="https://homarr.fleeforezz.me" target="_blank" className="flex flex-col justify-center">
+                        <div className="flex max-w-[1750px] max-h-[1000px] overflow-hidden transition-all hover:rounded-3xl">
                             <img src="/HomeLab.png" className="w-[100%] object-cover transition-all hover:scale-[1.05]" />
                         </div>
                     </a>
                     <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                            2023
+                            <h4>
+                                2023
+                            </h4>
                         </div>
-                        <div className="flex justify-start items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                            NAS
+                        <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw] whitespace-nowrap">
+                            <h4>
+                                NAS
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            Test Apps
+                            <h4>
+                                Server
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            Sevices
+                            <h4>
+                                Automation
+                            </h4>
                         </div>
                     </div>
                     <div>
                         <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                             HomeLab
                         </h2>
-                        <h3 className="flex text-white font-thin opacity-90 text-3xl max-md:text-[4vw] items-center">
-                            Linux server
-                            <Dot size={40} color="#ffffff" />
-                            Docker
-                            <Dot size={40} color="#ffffff" />
-                            Devop
-                        </h3>
+                        <div className="flex items-center whitespace-nowrap">
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                Linux Server
+                            </h3>
+                            <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                Docker
+                            </h3>
+                            <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                DevOps
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex max-md:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
+            {/* Coffee 1900 */}
+            <div className="flex max-md:flex-wrap max-lg:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
                 <div className="max-md:px-5">
                     <div className="pt-10 max-md:pt-7">
                         <a href="https://coffee1900.fleeforezz.me" target="_blank" className="flex w-[100%] max-w-[952px] max-h-[1192px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
                             <img src="/Coffee-1900.png" className="w-[100%] transition-all hover:scale-[1.05]" />
                         </a>
                     </div>
-                    <div className="flex gap-4 text-[#8c8c73] text-[1.5vw] max-md:text-[3.4vw] mt-8">
+                    <div className="flex gap-4 text-[#8c8c73] text-[1.5vw] max-md:text-[3.4vw] max-sm:gap-2 mt-8">
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 py-1 max-md:py-[0vw]">
-                            2023
+                            <h4>
+                                2023
+                            </h4>
                         </div>
-                        <div className="flex justify-start items-center border-2 border-[#8c8c73] rounded-full px-5 py-1 max-md:py-[0vw]">
-                            HTML
+                        <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 py-1 max-md:py-[0vw]">
+                            <h4>
+                                HTML
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            CSS
+                            <h4>
+                                CSS
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            Vite
+                            <h4>
+                                JS
+                            </h4>
                         </div>
                     </div>
                     <div>
                         <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                             Coffee 1900
                         </h2>
-                        <h3 className="flex text-white font-thin opacity-90 text-[1.875vw] max-md:text-[4vw] items-center">
-                            Front-End Development
-                            <Dot size={40} color="#ffffff" />
-                            School Project
-                        </h3>
+                        <div className="flex items-center whitespace-nowrap">
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                Front-End Development
+                            </h3>
+                            <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                School Project
+                            </h3>
+                        </div>
                     </div>
                 </div>
 
+                {/* Portfolio */}
                 <div className="flex flex-col justify-center max-md:ml-0">
                     <div className="max-md:px-5 max-md:mt-7">
                         <div>
@@ -134,32 +163,45 @@ export default function Projects() {
                                 <img src="/Portfolio-1.png" className="w-[100%] transition-all hover:scale-[1.05]" />
                             </a>
                         </div>
-                        <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
+                        <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] max-sm:gap-2 mt-8">
                             <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                                2023
+                                <h4>
+                                    2023
+                                </h4>
                             </div>
-                            <div className="flex justify-start items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                                HTML
+                            <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
+                                <h4>
+                                    HTML
+                                </h4>
                                 <Dot size={40} color="#8c8c73" />
-                                CSS
+                                <h4>
+                                    Tailwind
+                                </h4>
                                 <Dot size={40} color="#8c8c73" />
-                                Vite
+                                <h4>
+                                    NextJs
+                                </h4>
                             </div>
                         </div>
                         <div>
                             <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                                 Portfolio
                             </h2>
-                            <h3 className="flex text-white font-thin opacity-90 text-[1.875vw] max-md:text-[4vw] items-center">
-                                Front-End Development
-                                <Dot size={40} color="#ffffff" />
-                                Self Project
-                            </h3>
+                            <div className="flex items-center whitespace-nowrap">
+                                <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                    Front-End Development
+                                </h3>
+                                <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                                <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                    Self Project
+                                </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            {/* Cafi */}
             <div className="flex max-md:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
                 <div className="max-md:px-5">
                     <div className=" pt-20 max-md:pt-7">
@@ -167,30 +209,43 @@ export default function Projects() {
                             <img src="/Cafi.png" className="w-[100%] max-md:w-[100%] transition-all hover:scale-[1.05]" />
                         </a>
                     </div>
-                    <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
+                    <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] max-sm:gap-2 mt-8">
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                            2023
+                            <h4>
+                                2023
+                            </h4>
                         </div>
-                        <div className="flex justify-start items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                            HTML
+                        <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
+                            <h4>
+                                HTML
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            CSS
+                            <h4>
+                                CSS
+                            </h4>
                             <Dot size={40} color="#8c8c73" />
-                            Vite
+                            <h4>
+                                Vite
+                            </h4>
                         </div>
                     </div>
                     <div>
                         <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                             Cafi
                         </h2>
-                        <h3 className="flex text-white font-thin opacity-90 text-[1.875vw] max-md:text-[3vw] items-center">
-                            Front-End Development
-                            <Dot size={40} color="#ffffff" />
-                            School Project
-                        </h3>
+                        <div className="flex items-center whitespace-nowrap">
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                Front-End Development
+                            </h3>
+                            <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                            <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                School Project
+                            </h3>
+                        </div>
                     </div>
                 </div>
 
+                {/* Contact Page */}
                 <div className="flex flex-col max-md:ml-0">
                     <div className="max-md:px-5 max-md:pt-7">
                         <div>
@@ -198,25 +253,35 @@ export default function Projects() {
                                 <img src="/Contact-page.png" className="w-[100%] max-md:w-[1000px] transition-all hover:scale-[1.05]" />
                             </div>
                         </div>
-                        <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
+                        <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] max-sm:gap-2 mt-8">
                             <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                                2023
+                                <h4>
+                                    2023
+                                </h4>
                             </div>
-                            <div className="flex justify-start items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
-                                HTML
+                            <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
+                                <h4>
+                                    HTML
+                                </h4>
                                 <Dot size={40} color="#8c8c73" />
-                                CSS
+                                <h4>
+                                    CSS
+                                </h4>
                             </div>
                         </div>
                         <div>
                             <h2 className="text-5xl max-md:[2vw] font-medium text-white mt-3 mb-3">
                                 Contact Page
                             </h2>
-                            <h3 className="flex text-white font-thin opacity-90 text-[1.7vw] max-md:text-[4vw] items-center">
-                                Front-End Development
-                                <Dot size={40} color="#ffffff" />
-                                Self Project
-                            </h3>
+                            <div className="flex items-center whitespace-nowrap">
+                                <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                    Front-End Development
+                                </h3>
+                                <Dot size={40} color="#ffffff" className="opacity-[60%]" />
+                                <h3 className="text-[1.875vw] max-md:text-[4vw] opacity-[70%]">
+                                    Self Project
+                                </h3>
+                            </div>
                         </div>
                     </div>
                 </div>

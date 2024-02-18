@@ -1,5 +1,5 @@
 "use client"
-import { GithubLogo, LinkedinLogo, InstagramLogo } from "@phosphor-icons/react"
+import { GithubLogo, LinkedinLogo, InstagramLogo, GitlabLogoSimple } from "@phosphor-icons/react"
 
 export default function Contact() {
     return (
@@ -21,9 +21,9 @@ export default function Contact() {
             <div className="flex max-md:flex-wrap justify-around gap-10">
                 <div className="max-md:px-5">
                     <h1 className="font-bold text-6xl max-md:text-[7vw]">
-                        Have an awsome idea?
+                        Have an awesome <span className="idea">idea</span>?
                         <br></br>
-                        Let's bring it to life.
+                        Let's share with me.
                     </h1>
                     <p className="text-3xl max-md:text-[6vw] mt-10 mb-10">
                         Changing and adapting new things
@@ -54,6 +54,12 @@ export default function Contact() {
                                 <GithubLogo size={36} color="#0a0a0a" />
                                 <span className="github relative">
                                     Github
+                                </span>
+                            </a>
+                            <a href="https://gitlab.fleeforezz.me/jso" target="_blank" className="gitlab flex items-center gap-2 mt-5 mb-5">
+                                <GitlabLogoSimple size={36} color="#0a0a0a"/>
+                                <span className="gitlab relative">
+                                    Gitlab
                                 </span>
                             </a>
                             <a href="https://www.linkedin.com/in/nhattruongminh/" target="_blank" className="linkedin flex items-center gap-2 mt-5 mb-5">

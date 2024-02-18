@@ -62,9 +62,10 @@ export default function Header() {
             initial="hidden"
             animate="visible"
         >
-            <div className="flex align-middle">
+            <div className="flex">
                 <a href="#hero" className="font-bold text-xl">
-                    Nhat Truong</a>
+                    Nhat Truong
+                </a>
             </div>
 
             <div className="flex gap-5 items-center">

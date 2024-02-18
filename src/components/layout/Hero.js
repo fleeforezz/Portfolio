@@ -12,8 +12,8 @@ const img = {
     visible: {
         opacity: 1,
         scale: 1,
-        x: "50%",
-        y: "-50%",
+        x: "57%",
+        y: "0%",
         transition: {
             duration: 2.5,
             delay: 0.23,
@@ -51,7 +51,7 @@ export default function Hero() {
         <section id="hero" className="h-screen py-20 max-md:pt-64 max-md:py-36">
             <motion.img
                 src="/hero-img.jpg"
-                className="absolute w-[45%] top-[50%] left-[5%] max-md:top-[50%] max-md:left-[0%] max-md:w-[50%] max-md:h-[50%] translate-x-[-50%] translate-y-[-50%] rounded-md -z-10" 
+                className="absolute rounded-md w-[45%] max-sm:w-[60%] max-sm:left-[-13%] -z-30"
                 variants={img}
                 initial="hidden"
                 animate="visible"
@@ -62,7 +62,6 @@ export default function Hero() {
                 variants={banner}
                 initial="initial"
                 animate="animate"
-                
             >
                 <motion.h1 className="text-[10vw] max-md:text-[11.5vw] text-[#262626] font-extrabold text-center"
                     variants={letterAnimation}
