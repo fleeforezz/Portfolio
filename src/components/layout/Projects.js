@@ -1,7 +1,8 @@
 "use client"
 import { Dot } from "@phosphor-icons/react"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion"
+import HomeLab from "../popout/HomeLab";
 
 // Projects heading animation
 const banner = {
@@ -40,6 +41,8 @@ export default function Projects() {
         }
     })
 
+    const [showPopout, setPopout] = useState(false);
+
     return (
         <motion.section ref={ref} id="projects" className="pt-10"
             variants={banner}
@@ -47,7 +50,7 @@ export default function Projects() {
             animate={mainControls}
         >
             <div className="px-20 max-md:px-5 max-xl:px-16">
-                <motion.h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] max-sm:pb-10"
+                <motion.h1 className="flex gap-10 justify-center items-center font-medium text-center text-[#8c8c73] text-[8vw] max-sm:text-[10vw] max-sm:pb-0"
                     variants={letterAnimation}
                 >
                     <div className="max-md:hidden">
@@ -65,15 +68,18 @@ export default function Projects() {
 
                 {/* Homelab */}
                 <div>
-                    <a href="https://homarr.fleeforezz.me" target="_blank" className="flex flex-col justify-center">
+                    <div 
+                        className="flex flex-col justify-center"
+                        onClick={() => setPopout(true)}
+                    >
                         <div className="flex max-w-[1750px] max-h-[1000px] overflow-hidden transition-all hover:rounded-3xl">
                             <img src="/HomeLab.png" className="w-[100%] object-cover transition-all hover:scale-[1.05]" />
                         </div>
-                    </a>
+                    </div>
                     <div className="flex gap-4 text-[#8c8c73] text-2xl max-md:text-[3.4vw] mt-8">
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw]">
                             <h4>
-                                2023
+                                2022
                             </h4>
                         </div>
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 max-md:px-[5vw] py-1 max-md:py-[0vw] whitespace-nowrap">
@@ -109,15 +115,19 @@ export default function Projects() {
                         </div>
                     </div>
                 </div>
+                {showPopout && <HomeLab onClose={() => setPopout(false)}/>}
             </div>
 
             {/* Coffee 1900 */}
             <div className="flex max-md:flex-wrap max-lg:flex-wrap gap-16 max-md:gap-0 max-xl:gap-7 px-20 max-md:px-0 max-xl:px-16">
-                <div className="max-md:px-5">
+                <div
+                    className="max-md:px-5"
+                    onClick={() => setPopout(true)}
+                >
                     <div className="pt-10 max-md:pt-7">
-                        <a href="https://coffee1900.fleeforezz.me" target="_blank" className="flex w-[100%] max-w-[952px] max-h-[1192px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
+                        <div className="flex w-[100%] max-w-[952px] max-h-[1192px] mt-10 overflow-hidden transition-all hover:rounded-3xl">
                             <img src="/Coffee-1900.png" className="w-[100%] transition-all hover:scale-[1.05]" />
-                        </a>
+                        </div>
                     </div>
                     <div className="flex gap-4 text-[#8c8c73] text-[1.5vw] max-md:text-[3.4vw] max-sm:gap-2 mt-8">
                         <div className="flex items-center border-2 border-[#8c8c73] rounded-full px-5 py-1 max-md:py-[0vw]">

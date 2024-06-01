@@ -1,43 +1,29 @@
+# Use node 18 alpine image as base
 FROM node:18-alpine
 
+# Set local directory in docker
 WORKDIR /app
 
+# Copy package.json and package-lock.json into docker workdir
 COPY package*.json ./
 
+# Update npm to latest version
+RUN npm install -g npm@latest
+
+# Install dependencies
 RUN npm install
 
+# Copy src file to docker
 COPY . .
 
-# RUN npm run build
-
+# Expose docker to port 9463
 EXPOSE 9463
 
+# Set env port to 9463
 ENV PORT 9463
 
+# Set default hostname to 0.0.0.0 (accept all hosts)
 ENV HOSTNAME "0.0.0.0"
 
 # Start the app
-# CMD ["npm", "start"]
 CMD ["npm", "run", "dev"]
-
-
-
-# FROM node:18-alpine AS build
-
-# WORKDIR /app
-
-# COPY package*.json ./
-
-# RUN npm ci
-
-# COPY . .
-
-# RUN npm run build
-
-# EXPOSE 9463
-
-# ENV PORT 9463
-
-# ENV HOSTNAME "0.0.0.0"
-
-# CMD ["npm", "start"]

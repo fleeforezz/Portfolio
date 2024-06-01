@@ -51,7 +51,7 @@ export default function Aboutme() {
                     body.style.color = 'black';
                 }
 
-                if (scrollY > totalHeight * 0.50 && scrollY < totalHeight * 0.948) {
+                if (scrollY > totalHeight * 0.50 && scrollY < totalHeight * 0.938) {
                     body.style.backgroundColor = '#0e0e0c';
                     body.style.color = '#FAFAF9';
                 }
@@ -74,7 +74,9 @@ export default function Aboutme() {
             animate={mainControls}
         >
             <h1 className="font-medium text-[#d1d1c7] text-[6vw] max-md:text-[7vw] max-sm:text-5xl leading-[6vw] pt-24 max-md:pt-0 pb-24 max-md:pb-14">
-                I design top-notch minimalist interfaces and optimize software development for swift, high-quality delivery.
+            Me as a DevOps engineer transforms ideas 
+            into reality, driving efficiency and 
+            excellence in every deployment.
             </h1>
 
             <motion.div className="flex gap-10 justify-center items-center pt-44"
@@ -102,21 +104,30 @@ export default function Aboutme() {
                         <motion.h3 className="font-bold text-6xl max-md:text-[7vw] max-md:mt-10"
                             variants={letterAnimation}
                         >
-                            A brief intro, who am I?
+                            A brief intro, who am I 🧐 ?
                         </motion.h3>
-                        <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10"
+                        <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10 max-md:mt-5"
                             variants={letterAnimation}
                         >
-                            I am an independent Frontend Developer, I also interested in Devop Engineer.
+                            I am a seasoned DevOps engineer with
+                            a passion for streamlining and optimizing 
+                            software development processes.
                             <br></br>
                             <br></br>
-                            I specialize in crafting elevated, intuitive, and
-                            minimalistic designs for startups and small businesses
-                            to help them stand out in the digital landscape with a powerful impact. 😎
+                            With a background in both development 
+                            and operations, I specialize in creating 
+                            seamless workflows, implementing continuous 
+                            integration and deployment pipelines, and 
+                            ensuring the reliability and scalability 
+                            of infrastructure.
                             <br></br>
                             <br></br>
-                            When I am not developing or designing, I enjoy discovering Ci/CD and automation
-                            on my <a href="https://homarr.fleeforezz.me" target="_blank" className=" underline">HomeLab Server</a>.
+                            When I'm not engaged in development, 
+                            I enjoy working on 
+                            <a href="https://hiishi.fleeforezz.me" target="_blank" className=" underline">
+                                Hi Is Hi 🐈
+                            </a> 
+                            website.
                         </motion.p>
                     </motion.span>
                 </div>

@@ -6,8 +6,8 @@ import { useEffect, useRef } from "react";
 const banner = {
     animate: {
         transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.4,
+            delayChildren: 0.2,
+            staggerChildren: 0.3,
         },
     },
 }
@@ -20,7 +20,7 @@ const letterAnimation = {
     animate: {
         y: 0,
         opacity: 1,
-        delay: 5,
+        delay: 4,
         transition: {
             duration: 0.3,
         },
@@ -61,32 +61,35 @@ export default function Services() {
                 </div>
             </motion.h1>
 
-            <div ref={ref} className="grid grid-cols-2 gap-16 max-md:gap-10 max-md:grid-cols-1">
+            <div ref={ref} className="grid grid-cols-2 gap-16 max-md:gap-5 max-md:grid-cols-1">
                 <div>
                     <motion.h2 className="font-bold text-[4.5vw] max-md:text-[7vw]"
                         variants={letterAnimation}
                     >
                         My expertises.
                     </motion.h2>
-                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10"
+                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-5 max-md:mt-5"
                         variants={letterAnimation}
                     >
-                        I focus on all things design and web related.
-                        With each of my services, my goal is to deliver
-                        smooth experience for user.
+                        Optimizing software delivery, 
+                        improving infrastructure scalability 
+                        and reliability, fostering collaboration, 
+                        and driving innovation to deliver value. 
+                        I am eager to tackle the evolving challenges 
+                        in this field.
                     </motion.p>
                 </div>
 
-                <span className="hidden max-md:flex bg-[#aeae9d] w-[100%] h-1"></span>
+                <span className="hidden max-md:block bg-[#aeae9d] w-[100%] h-1"></span>
 
-                <motion.div className="font-extrabold text-[4.5vw] max-md:text-[7vw] text-[#aeae9d] leading-[5rem] max-md:leading-10"
+                <motion.div className="font-extrabold text-[4.5vw] max-md:text-[7vw] text-[#aeae9d] leading-[6rem] max-md:leading-9"
                     variants={letterAnimation}
                 >
-                    <h3>Web Development</h3>
-                    <h3>Web Design</h3>
-                    <h3>Wireframing</h3>
-                    <h3>Server</h3>
-                    <h3>Infrastructure</h3>
+                    <h3>Design-Infrastructure</h3>
+                    <h3>Create pipeline</h3>
+                    <h3>Web development</h3>
+                    <h3>Interact with-Server</h3>
+                    <h3></h3>
                 </motion.div>
 
                 <div>
@@ -95,7 +98,7 @@ export default function Services() {
                     >
                         My digital tool box.
                     </motion.h2>
-                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-10"
+                    <motion.p className="text-[1.6vw] max-md:text-[4vw] mt-5 max-md:mt-5"
                         variants={letterAnimation}
                     >
                         These are my go to tech stack to make any projects happen.
@@ -104,22 +107,22 @@ export default function Services() {
                     </motion.p>
                 </div>
 
-                <span className="hidden max-md:flex bg-[#aeae9d] w-[100%] h-1"></span>
+                <span className="hidden max-md:block bg-[#aeae9d] w-[100%] h-1"></span>
 
-                <motion.div className="font-extrabold text-[4.5vw] max-md:text-[7vw] text-[#aeae9d] leading-[5rem] max-md:leading-10"
+                <motion.div className="font-extrabold text-[4.5vw] max-md:text-[7vw] text-[#aeae9d] leading-[6rem] max-md:leading-9"
                     variants={letterAnimation}
                 >
-                    <h3>Javascript</h3>
-                    <h3>HTML</h3>
-                    <h3>CSS</h3>
-                    <h3>Figma</h3>
-                    <h3>TailwindCSS</h3>
-                    <h3>ReactJS</h3>
-                    <h3>MySQL</h3>
                     <h3>Docker</h3>
                     <h3>Kubernetes</h3>
                     <h3>Git</h3>
                     <h3>GitLab</h3>
+                    <h3>Prometheus</h3>
+                    <h3>HTML</h3>
+                    <h3>CSS</h3>
+                    <h3>Javascript</h3>
+                    <h3>TailwindCSS</h3>
+                    <h3>ReactJS</h3>
+                    <h3>MySQL</h3>
                 </motion.div>
             </div>
         </motion.section>

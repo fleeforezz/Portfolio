@@ -51,7 +51,7 @@ export default function Hero() {
         <section id="hero" className="h-screen py-20 max-md:pt-64 max-md:py-36">
             <motion.img
                 src="/hero-img.jpg"
-                className="absolute rounded-md w-[45%] max-sm:w-[60%] max-sm:left-[-13%] -z-30"
+                className="absolute rounded-md w-[45%] max-sm:w-[60%] max-sm:left-[-13%] -z-[2]"
                 variants={img}
                 initial="hidden"
                 animate="visible"
@@ -63,7 +63,7 @@ export default function Hero() {
                 initial="initial"
                 animate="animate"
             >
-                <motion.h1 className="text-[10vw] max-md:text-[11.5vw] text-[#262626] font-extrabold text-center"
+                <motion.h1 className="heading-1 text-[10vw] max-md:text-[11.5vw] text-[#262626] font-extrabold text-center"
                     variants={letterAnimation}
                 >
                     HEY, I'M NHAT
@@ -73,7 +73,7 @@ export default function Hero() {
                 >
                     HEY, I'M NHAT
                 </motion.h1>
-                <motion.h1 className="text-[10vw] max-md:text-[11.5vw] text-[#262626] font-extrabold text-center text-balance"
+                <motion.h1 className="heading-3 text-[10vw] max-md:text-[11.5vw] text-[#262626] font-extrabold text-center text-balance"
                     variants={letterAnimation}
                 >
                     HEY, I'M NHAT

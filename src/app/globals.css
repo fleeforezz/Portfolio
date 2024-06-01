@@ -3,13 +3,7 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    height: 0px;
-}
-
-::-webkit-scrollbar-button {
-    height: 3px;
-    background-color: #8c8b73;
-    border-radius: 16px;
+    width: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -17,10 +11,25 @@
     border-radius: 16px;
 }
 
-body {
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5c5c4b;
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-track {
+    width: 20px;
+}
+
+::selection {
+    background-color: #8c8b73;
+    color: white;
+}
+
+body { 
     background-color: #FAFAF9;
     transition: background-color 0.3s ease;
 }
+
 
 body,
 a,
@@ -31,26 +40,22 @@ button {
 #navbar {
     transition: background-color 0.3s ease;
 }
-
+.bounce {
+    transform: rotate(90deg);
+    animation: bounce 2s infinite;
+}
 @keyframes bounce {
-
     0% {
-        transform: scaleX(100%) rotate(90deg);
+        transform: rotate(90deg) translateY(0%) scale(3%);
     }
-
-    100% {
-        transform: scaleX(100%) rotate(90deg);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-
     50% {
-        transform: scaleX(20%) rotate(90deg);
+        transform: rotate(90deg) translateY(0%);
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
-}
-
-.bounce {
-    animation: bounce 2s infinite;
+    100% {
+        transform: rotate(90deg) translateY(-90%) scale(3%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
 }
 
 .outline-text {
@@ -58,25 +63,77 @@ button {
     -webkit-text-stroke: 3px;
     font-weight: 700;
     font-size: 10vw;
+    animation: yay 3s infinite ease-in;
+}
+/* @keyframes yay {
+    0% {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 3px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
+
+    100% {
+        -webkit-text-fill-color: #262626;
+        -webkit-text-stroke: 0px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
 }
 
-.idea {
-    background: linear-gradient(to right,
-            rgb(255, 116, 116),
-            yellow,
-            rgb(142, 255, 142),
-            rgb(146, 146, 255),
-            violet);
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+.heading-1 {
+    -webkit-text-fill-color: #262626;
+    -webkit-text-stroke: 0px;
+    font-weight: 700;
+    font-size: 10vw;
+    animation: heading-1 3s infinite ease-in;
+    animation-delay: 10s;
+}
+@keyframes heading-1 {
+    0% {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 3px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
+
+    100% {
+        -webkit-text-fill-color: #262626;
+        -webkit-text-stroke: 0px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
+}
+
+.heading-3 {
+    -webkit-text-fill-color: #262626;
+    -webkit-text-stroke: 0px;
+    font-weight: 700;
+    font-size: 10vw;
+    animation: heading-3 3s infinite ease-in;
+    animation-delay: 10s;
+}
+@keyframes heading-3 {
+    0% {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 3px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
+
+    100% {
+        -webkit-text-fill-color: #262626;
+        -webkit-text-stroke: 0px;
+        font-weight: 700;
+        font-size: 10vw;
+    }
 }
 
 @media not all and (min-width: 768px) {
     .outline-text {
         font-size: 12.5vw;
     }
-}
+} */
 
 .transition-all {
     transition-property: all;
@@ -92,7 +149,8 @@ button {
 
 .about:focus,
 .about:hover {
-    color: black;
+    color: #8c8b73;
+    transition: 300ms;
 }
 
 .about:focus::after,
@@ -109,7 +167,7 @@ button {
     left: 0%;
     width: 0%;
     height: 2px;
-    background-color: black;
+    background-color: #8c8b73;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -117,7 +175,8 @@ button {
 
 .service:focus,
 .service:hover {
-    color: black;
+    color: #8c8b73;
+    transition: 300ms;
 }
 
 .service:focus::after,
@@ -134,7 +193,7 @@ button {
     left: 0%;
     width: 0%;
     height: 2px;
-    background-color: black;
+    background-color: #8c8b73;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -142,7 +201,8 @@ button {
 
 .project:focus,
 .project:hover {
-    color: black;
+    color: #8c8b73;
+    transition: 300ms;
 }
 
 .project:focus::after,
@@ -159,7 +219,7 @@ button {
     left: 0%;
     width: 0%;
     height: 2px;
-    background-color: black;
+    background-color: #8c8b73;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -180,11 +240,11 @@ button {
 .talk::after {
     content: "";
     position: absolute;
-    bottom: 23px;
+    bottom: 31px;
     left: 20%;
     width: 0%;
     height: 1px;
-    background-color: white;
+    background-color: #8c8b73;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -273,6 +333,5 @@ button {
 .about-me-para {
     position: -webkit-sticky;
     position: sticky;
-    top: 15%;
-    padding-top: 100px;
+    top: 10.4%;
 }

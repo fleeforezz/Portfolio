@@ -1,6 +1,5 @@
 stages:
   - build
-  # - test
   - docker-build
   - deploy
 
@@ -12,14 +11,6 @@ build:
     - npm install
     - npm run build
     - echo "Build successfully!"
-
-# test:
-#   stage: test
-#   image: node
-#   script:
-#     - echo "Testing App"
-#     - CI=true npm test
-#     - echo "Test successfully!"
 
 docker-build:
   stage: docker-build
@@ -46,27 +37,12 @@ deploy:
   before_script:
     - echo "deploying app"
     - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-    - chmod 600 ~/.ssh/id_ed25519
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
     - eval "$(ssh-agent -s)" 
-    - ssh-add ~/.ssh/id_ed25519
-    - ssh-keyscan $PROD_SERVER_IP -H  >> ~/.ssh/known_hosts
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan $PROD_GAMMA_SERVER_IP -H  >> ~/.ssh/known_hosts
   script:
-    # - ssh nhat@$PROD_SERVER_IP
-    - ssh nhat@$PROD_SERVER_IP "sudo docker pull fleeforezz/portfolio"
-    - ssh nhat@$PROD_SERVER_IP "sudo docker stop portfolio || true && sudo docker rm portfolio || true"
-    - ssh nhat@$PROD_SERVER_IP "sudo docker run -p 9463:9463 -d --name portfolio fleeforezz/portfolio"
-
-# deploy:
-#   stage: deploy
-#   image: kroniak/ssh-client
-#   before_script:
-#     - echo "deploying app"
-#     - mkdir -p ~/.ssh
-#     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519 
-#     - chmod 600 ~/.ssh/id_ed25519
-#     - eval "$(ssh-agent -s)" 
-#     - ssh-add ~/.ssh/id_ed25519
-#     - ssh-keyscan 116.102.23.121 -H  >> ~/.ssh/known_hosts
-#   script:
-#     - ssh nhat@116.102.23.121
+    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker stop portfolio || true && sudo docker rmi portfolio:latest || true && sudo docker rm portfolio || true"
+    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker pull fleeforezz/portfolio"
+    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker run -p 9463:9463 --name portfolio -d --restart unless-stopped fleeforezz/portfolio"

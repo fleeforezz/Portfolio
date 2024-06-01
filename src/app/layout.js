@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" sizes="any" href="/cactus.png" />
+        <link rel="icon" sizes="any" href="/avatar.jpg" />
       </head>
       <body className={chillax.className}>
         {children}
