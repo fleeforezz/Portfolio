@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t fleeforezz/portfolio .
+docker build --pull -t fleeforezz/portfolio .
