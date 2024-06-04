@@ -1,4 +1,4 @@
-This is my [Portfolio](https://fleeforezz.me).
+Link to my portfolio [Portfolio](https://fleeforezz.me).
 
 ## Srceenshot
 ![preview](preview.png)
