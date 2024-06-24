@@ -1,5 +1,5 @@
 # Use node 18 alpine image as base
-FROM node:18-alpine
+FROM node:22.3.0-alpine3.19
 
 # Set local directory in docker
 WORKDIR /app
