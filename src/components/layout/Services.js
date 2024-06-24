@@ -116,12 +116,14 @@ export default function Services() {
                     <h3>Kubernetes</h3>
                     <h3>Git</h3>
                     <h3>GitLab</h3>
-                    <h3>Prometheus</h3>
-                    <h3>HTML</h3>
-                    <h3>CSS</h3>
-                    <h3>Javascript</h3>
-                    <h3>TailwindCSS</h3>
-                    <h3>ReactJS</h3>
+                    <h3>Jenkins</h3>
+                    <h3>Grafana</h3>
+                    <>Ansible</>
+                    {/* <h3>HTML</h3> */}
+                    {/* <h3>CSS</h3> */}
+                    {/* <h3>Javascript</h3> */}
+                    {/* <h3>TailwindCSS</h3> */}
+                    {/* <h3>ReactJS</h3> */}
                     <h3>MySQL</h3>
                 </motion.div>
             </div>
