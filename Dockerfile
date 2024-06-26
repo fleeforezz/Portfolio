@@ -26,4 +26,4 @@ ENV PORT 9463
 ENV HOSTNAME "0.0.0.0"
 
 # Start the app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

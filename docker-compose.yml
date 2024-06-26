@@ -1,14 +1,11 @@
-version: '3.5'
+version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  portfolio:
+    image: fleeforezz/portfolio
     container_name: portfolio_2.0
     ports:
       - '9463:9463'
     volumes:
-      - .:/app
-      - /app/node_modules
+    - /home/nhat/portfolio
     restart: unless-stopped
