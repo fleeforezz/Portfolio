@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build --pull -t fleeforezz/netflix .
+sudo docker build --pull -t fleeforezz/porfolio .
