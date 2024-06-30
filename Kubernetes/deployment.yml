@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-deployment
+spec:
+  selector:
+    matchLabels:
+      app: portfolio
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      containers:
+      - name: portfolio
+        image: fleeforezz/portfolio
+        ports:
+        - containerPort: 9463

@@ -6,6 +6,4 @@ services:
     container_name: portfolio_2.0
     ports:
       - '9463:9463'
-    volumes:
-    - /home/nhat/portfolio
     restart: unless-stopped
