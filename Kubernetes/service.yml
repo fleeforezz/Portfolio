@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 9463
       targetPort: 9463
-      nodePort: 33000
+      nodePort: 32500
