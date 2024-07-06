@@ -3,13 +3,23 @@ pipeline {
     
     environment {
         SCANNER_HOME=tool 'sonar-server'
+        APP_NAME = "portfolio"
+        RELEASE = "1.0.0"
+        DOCKER_USER = "fleeforezz"
+        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
 
     stages {
+        stage('Clean up WorkSpace') {
+            steps {
+                cleanWs()
+            }
+        }
+        
         stage('Git Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/fleeforezz/Portfolio.git'
-                echo "Git clone successfull"
             }
         }
         
@@ -21,27 +31,32 @@ pipeline {
             }
         }
         
-        // stage('Quality Gate') {
-        //     steps {
-        //         script {
-        //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
-        //         }
-        //     }
-        // }
+        stage('Quality Gate') {
+            steps {
+                script {
+                    timeout(time: 2, unit: 'MINUTES') {
+                        waitForQualityGate abortPipeline: false
+                    }
+                }
+            }
+        }
         
         stage('Node Build') {
             steps {
                 sh "npm install"
                 sh "npm run build"
-                echo "Node build successfull"
             }
         }
         
         stage('Docker Build') {
             steps {
-                sh "sudo chmod 700 run-build.sh"
-                sh "./run-build.sh"
-                echo "Docker build successfull"
+                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+            }
+        }
+        
+        stage('Trivy Scan') {
+            steps {
+                sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG}"
             }
         }
         
@@ -49,8 +64,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker') {
-                        sh "sudo docker push fleeforezz/portfolio"
-                        echo "Docker push successfull"
+                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_TAG}"
                     }
                 }
             }
@@ -65,20 +79,20 @@ pipeline {
         //     }
         // }
         
-        stage('Deploy to Kubernetes') {
-            steps {
-                script {
-                    dir('Kubernetes') { 
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                            sh 'kubectl apply -f deployment.yml'
-                            sh 'kubectl apply -f service.yml' 
-                            sh 'kubectl get svc'
-                            sh 'kubectl get all'
-                        }
-                    }
-                }
-            }
-        }
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         script {
+        //             dir('Kubernetes') { 
+        //                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+        //                     sh 'kubectl apply -f deployment.yml'
+        //                     sh 'kubectl apply -f service.yml' 
+        //                     sh 'kubectl get svc'
+        //                     sh 'kubectl get all'
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
     
     post {
@@ -87,9 +101,10 @@ pipeline {
             subject: "${currentBuild.result}",
             body: "Project: ${env.JOB_NAME}<br/>" +
             "Build Number: ${env.BUILD_NUMBER}<br/>" +
+            "Docker Image Tag: ${IMAGE_TAG}<br/>" +
             "URL: ${env.BUILD_URL}<br/>",
-            to: 'fleeforezz@gmail.com',
-            attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
+            to: 'fleeforezz@gmail.com'
+            // attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
         }
     }
 }
