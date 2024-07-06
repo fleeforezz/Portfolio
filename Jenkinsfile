@@ -56,7 +56,7 @@ pipeline {
         
         stage('Trivy Scan') {
             steps {
-                sh "trivy image ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "trivy --no-progress --exit-code 1 --serverity HIGH,CRITICAL image ${IMAGE_NAME}:${IMAGE_TAG}"
             }
         }
         
