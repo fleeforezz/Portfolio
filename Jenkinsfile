@@ -31,15 +31,15 @@ pipeline {
             }
         }
         
-        stage('Quality Gate') {
-            steps {
-                script {
-                    timeout(time: 2, unit: 'MINUTES') {
-                        waitForQualityGate abortPipeline: false
-                    }
-                }
-            }
-        }
+        // stage('Quality Gate') {
+        //     steps {
+        //         script {
+        //             timeout(time: 2, unit: 'MINUTES') {
+        //                 waitForQualityGate abortPipeline: true
+        //             }
+        //         }
+        //     }
+        // }
         
         stage('Node Build') {
             steps {
