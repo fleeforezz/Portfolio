@@ -3,7 +3,7 @@ version: '3.8'
 services:
   portfolio:
     image: fleeforezz/portfolio
-    container_name: portfolio_2.0
+    container_name: portfolio
     ports:
       - '9463:9463'
     restart: unless-stopped

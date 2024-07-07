@@ -2,9 +2,15 @@ pipeline {
     agent any
     
     environment {
-        SCANNER_HOME=tool 'sonar-server'
+        // Project info
         APP_NAME = "portfolio"
         RELEASE = "1.0.0"
+
+        // Sonar Scanner info
+        SCANNER_HOME=tool 'sonar-server'
+        SONAR_HOST_URL = "https://sonarqube.fleeforezz.me"
+
+        // Docker info
         DOCKER_USER = "fleeforezz"
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
@@ -26,7 +32,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar-server') {
-                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Portfolio -Dsonar.projectKey=Portfolio -Dsonar.host.url=https://sonarqube.fleeforezz.me"
+                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Portfolio -Dsonar.projectKey=Portfolio -Dsonar.host.url=${SONAR_HOST_URL}"
                 }
             }
         }
@@ -56,7 +62,8 @@ pipeline {
         
         stage('Trivy Scan') {
             steps {
-                sh "trivy --no-progress --exit-code 1 --serverity HIGH,CRITICAL image ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "trivy fs . > trivyfs.txt"
             }
         }
         
@@ -79,20 +86,20 @@ pipeline {
         //     }
         // }
         
-        // stage('Deploy to Kubernetes') {
-        //     steps {
-        //         script {
-        //             dir('Kubernetes') { 
-        //                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-        //                     sh 'kubectl apply -f deployment.yml'
-        //                     sh 'kubectl apply -f service.yml' 
-        //                     sh 'kubectl get svc'
-        //                     sh 'kubectl get all'
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    dir('Kubernetes') { 
+                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                            sh 'kubectl apply -f deployment.yml'
+                            sh 'kubectl apply -f service.yml' 
+                            sh 'kubectl get svc'
+                            sh 'kubectl get all'
+                        }
+                    }
+                }
+            }
+        }
     }
     
     post {
@@ -104,7 +111,7 @@ pipeline {
             "Docker Image Tag: ${IMAGE_TAG}<br/>" +
             "URL: ${env.BUILD_URL}<br/>",
             to: 'fleeforezz@gmail.com'
-            // attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
+            attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
         }
     }
 }
