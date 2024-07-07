@@ -64,13 +64,13 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_RELEASE_TAG} ."
+                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_LATEST_TAG} ."
             }
         }
         
         stage('Trivy Scan') {
             steps {
-                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_RELEASE_TAG}"
+                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                 sh "trivy fs . > trivyfs.txt"
             }
         }
@@ -79,7 +79,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker') {
-                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_RELEASE_TAG}"
+                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
                 }
             }
@@ -116,7 +116,7 @@ pipeline {
             subject: "${currentBuild.result}",
             body: "Project: ${env.JOB_NAME}<br/>" +
             "Build Number: ${env.BUILD_NUMBER}<br/>" +
-            "Docker Image Tag: ${IMAGE_RELEASE_TAG}<br/>" +
+            "Docker Image Tag: ${IMAGE_LATEST_TAG}<br/>" +
             "URL: ${env.BUILD_URL}<br/>",
             to: 'fleeforezz@gmail.com',
             attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
