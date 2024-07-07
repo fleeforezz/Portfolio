@@ -110,8 +110,8 @@ pipeline {
             "Build Number: ${env.BUILD_NUMBER}<br/>" +
             "Docker Image Tag: ${IMAGE_TAG}<br/>" +
             "URL: ${env.BUILD_URL}<br/>",
-            to: 'fleeforezz@gmail.com'
-            attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
+            to: 'fleeforezz@gmail.com',
+            attachmentsPattern: 'trivyfs.txt, trivyimage.txt'
         }
     }
 }
