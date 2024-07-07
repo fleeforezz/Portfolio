@@ -61,6 +61,13 @@ pipeline {
                 sh "npm run build"
             }
         }
+
+        stage('OWASP DP SCAN') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'owasp-dp-check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
         
         stage('Docker Build') {
             steps {
