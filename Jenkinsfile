@@ -5,6 +5,7 @@ pipeline {
         // Project info
         APP_NAME = "portfolio"
         RELEASE = "1.0.0"
+        GITHUB_URL = "https://github.com/fleeforezz/Portfolio.git"
 
         // Sonar Scanner info
         SCANNER_HOME=tool 'sonar-server'
@@ -14,6 +15,11 @@ pipeline {
         DOCKER_USER = "fleeforezz"
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+
+        // Deploy to Ubuntu server
+        SERVER_USERNAME = "nhat"
+        SERVER_IP = "10.0.1.32"
+        SERVER_CONNECTION = "${SERVER_USERNAME}" + " " + "${SERVER_IP}"
     }
 
     stages {
@@ -25,7 +31,7 @@ pipeline {
         
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/fleeforezz/Portfolio.git'
+                git branch: 'main', url: "${GITHUB_URL}"
             }
         }
         
@@ -77,14 +83,14 @@ pipeline {
             }
         }
         
-        // stage('Deploy to server') {
-        //     steps {
-        //         sshagent(['production-srv']) {
-        //             sh "ssh -o StrictHostKeyChecking=no -l nhat 10.0.1.32  'sudo docker stop portfolio || true && sudo docker rm portfolio || true'"
-        //             sh "ssh -o StrictHostKeyChecking=no -l nhat 10.0.1.32 'sudo docker run -p 9463:9463 -d --name portfolio --restart unless-stopped fleeforezz/portfolio'"
-        //         }
-        //     }
-        // }
+        stage('Deploy to server') {
+            steps {
+                sshagent(['production-srv']) {
+                    sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION}  'sudo docker stop ${APP_NAME} || true && sudo docker rm ${APP_NAME} || true'"
+                    sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION} 'sudo docker run -p 9463:9463 -d --name ${APP_NAME} --restart unless-stopped ${IMAGE_NAME}'"
+                }
+            }
+        }
         
         stage('Deploy to Kubernetes') {
             steps {
