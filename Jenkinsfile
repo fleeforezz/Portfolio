@@ -2,6 +2,13 @@ pipeline {
     agent any
     
     environment {
+        // ANSI Color Code
+        RESET_COLOR = "\e[0m"
+        RED = "\e[0;31m"
+        GREEN = "\e[0;32m"
+        BLUE = "\e[0;34m"
+        YELLOW = "\e[0;33m"
+
         // Project info
         APP_NAME = "portfolio"
         RELEASE = "1.0.0"
@@ -27,6 +34,7 @@ pipeline {
     stages {
         stage('Clean up WorkSpace') {
             steps {
+                echo "${RED}Clean up WorkSpace${RESET_COLOR}"
                 cleanWs()
             }
         }
