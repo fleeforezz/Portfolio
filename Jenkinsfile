@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // ANSI Color Code
-        RESET_COLOR = "\e[0m"
+        RESET_COLOR = "\033[0m"
         RED = "\e[0;31m"
         GREEN = "\e[0;32m"
         BLUE = "\e[0;34m"
