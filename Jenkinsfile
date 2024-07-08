@@ -63,6 +63,7 @@ pipeline {
                     }
                 }
             }
+            sleep(10)
         }
         
         stage('Node Build') {
