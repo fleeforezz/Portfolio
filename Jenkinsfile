@@ -77,7 +77,7 @@ pipeline {
         
         stage('Trivy Scan') {
             steps {
-                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
+                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG} > trivyimage.txt"
                 sh "trivy fs . > trivyfs.txt"
             }
         }
