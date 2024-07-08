@@ -4,10 +4,10 @@ pipeline {
     environment {
         // ANSI Color Code
         RESET_COLOR = "\033[0m"
-        RED = "\033[31m"
-        GREEN = "\e33[032m"
-        BLUE = "\e33[034m"
-        YELLOW = "\e33[033m"
+        RED = "\x1b[31m"
+        // GREEN = "\e33[032m"
+        // BLUE = "\e33[034m"
+        // YELLOW = "\e33[033m"
 
         // Project info
         APP_NAME = "portfolio"
