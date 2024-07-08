@@ -42,6 +42,7 @@ pipeline {
         
         stage('Git Checkout') {
             steps {
+                echo "####################### Git Checkout #######################"
                 git branch: 'main', url: "${GITHUB_URL}"
             }
         }
@@ -62,8 +63,8 @@ pipeline {
                         waitForQualityGate abortPipeline: true
                     }
                 }
+                sleep(10)
             }
-            sleep(10)
         }
         
         stage('Node Build') {
