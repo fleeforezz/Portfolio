@@ -1,9 +1,9 @@
 Link to my portfolio [Portfolio](https://fleeforezz.me).
 
-## Srceenshot
+# Srceenshot
 ![preview](preview.png)
 
-## Getting Started
+# Getting Started
 
 First, install node module:
 ```bash
