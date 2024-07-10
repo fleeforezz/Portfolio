@@ -5,9 +5,10 @@ pipeline {
         // ANSI Color Code
         RESET_COLOR = '\033[0m'
         RED = '\033[31m'
-        // GREEN = "\e33[032m"
-        // BLUE = "\e33[034m"
-        // YELLOW = "\e33[033m"
+        GREEN = '\033[032m'
+        BLUE = '\033[034m'
+        YELLOW = '\033[033m'
+        PURPLE = '\033[035m'
 
         // Project info
         APP_NAME = "portfolio"
@@ -34,13 +35,14 @@ pipeline {
     stages {
         stage('Clean up WorkSpace') {
             steps {
-                echo "${RED}Clean up WorkSpace${RESET_COLOR}"
+                echo "####################### ${RED}Clean up WorkSpace${RESET_COLOR} #######################"
                 cleanWs()
             }
         }
         
         stage('Git Checkout') {
             steps {
+                echo "####################### Git Checkout #######################"
                 git branch: 'main', url: "${GITHUB_URL}"
             }
         }
@@ -48,6 +50,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar-server') {
+                    echo "####################### ${BLUE}Sonar Scan${RESET_COLOR} #######################"
                     sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Portfolio -Dsonar.projectKey=Portfolio -Dsonar.host.url=${SONAR_HOST_URL}"
                 }
             }
@@ -56,30 +59,40 @@ pipeline {
         // stage('Quality Gate') {
         //     steps {
         //         script {
-        //             timeout(time: 2, unit: 'MINUTES') {
+        //             timeout(time: 5, unit: 'MINUTES') {
         //                 waitForQualityGate abortPipeline: true
         //             }
         //         }
+        //         sleep(10)
         //     }
         // }
         
         stage('Node Build') {
             steps {
+                echo "####################### ${GREEN}Node install and build${RESET_COLOR} #######################"
                 sh "npm install"
                 sh "npm run build"
+            }
+        }
+
+        stage('Trivy Filesystem Scan') {
+            steps {
+                echo "####################### ${YELLOW}Trivy Filesystem Scan${RESET_COLOR} #######################"
+                sh "trivy fs . > trivyfs.txt"
             }
         }
         
         stage('Docker Build') {
             steps {
+                echo "####################### ${BLUE}Docker build${RESET_COLOR} #######################"
                 sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_LATEST_TAG} ."
             }
         }
-        
-        stage('Trivy Scan') {
+
+        stage('Trivy Docker Image Scan') {
             steps {
+                echo "####################### ${YELLOW}Trivy Docker Image Scan${RESET_COLOR} #######################"
                 sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG} > trivyimage.txt"
-                sh "trivy fs . > trivyfs.txt"
             }
         }
         
@@ -87,6 +100,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker') {
+                        echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
                 }
@@ -107,6 +121,7 @@ pipeline {
                 script {
                     dir('Kubernetes') { 
                         withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                            echo "####################### ${PURPLE}Deploy to Kubernetes${RESET_COLOR} #######################"
                             sh 'kubectl apply -f deployment.yml'
                             sh 'kubectl apply -f service.yml' 
                             sh 'kubectl get svc'
