@@ -75,6 +75,12 @@ pipeline {
             }
         }
 
+        stage('OWASP DP-SCAN') {
+            steps {
+                dependencyCheck additionalArguments: '', nvdCredentialsId: 'sonar-token', odcInstallation: 'owasp-dp-check'
+            }
+        }
+
         stage('Trivy Filesystem Scan') {
             steps {
                 echo "####################### ${YELLOW}Trivy Filesystem Scan${RESET_COLOR} #######################"
