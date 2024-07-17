@@ -75,6 +75,12 @@ pipeline {
             }
         }
 
+        // stage('OWASP DP-SCAN') {
+        //     steps {
+        //         dependencyCheck additionalArguments: '', nvdCredentialsId: 'sonar-token', odcInstallation: 'owasp-dp-check'
+        //     }
+        // }
+
         stage('Trivy Filesystem Scan') {
             steps {
                 echo "####################### ${YELLOW}Trivy Filesystem Scan${RESET_COLOR} #######################"
@@ -99,7 +105,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker') {
+                    withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
@@ -124,7 +130,7 @@ pipeline {
                         withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                             // sh 'kubectl apply -f deployment.yml'
                             // sh 'kubectl apply -f service.yml' 
-                            sh 'kubetctl apply -f manifest.yml'
+                            sh 'kubectl apply -f manifest.yml'
                             sh 'kubectl get svc'
                             sh 'kubectl get all'
                         }
