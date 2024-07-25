@@ -21,9 +21,8 @@ pipeline {
 
         // Docker info
         REGISTRY = "gitea.fleeforezz.me"
-        DOCKER_USER = "fleeforezz"
-        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
-        // IMAGE_NAME = "${REGISTRY}" + "/" + "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        DOCKER_USER = "jso"
+        IMAGE_NAME = "${REGISTRY}" + "/" + "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_RELEASE_TAG = "${RELEASE}-${BUILD_NUMBER}"
         IMAGE_LATEST_TAG = "latest"
         IMAGE_BETA_TAG = "beta"
@@ -107,7 +106,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
+                    withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
