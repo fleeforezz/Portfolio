@@ -92,14 +92,14 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo "####################### ${BLUE}Docker build${RESET_COLOR} #######################"
-                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_RELEASE_TAG} ."
+                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_LATEST_TAG} ."
             }
         }
 
         stage('Trivy Docker Image Scan') {
             steps {
                 echo "####################### ${YELLOW}Trivy Docker Image Scan${RESET_COLOR} #######################"
-                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_RELEASE_TAG} > trivyimage.txt"
+                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG} > trivyimage.txt"
             }
         }
         
@@ -108,7 +108,7 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
-                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_RELEASE_TAG}"
+                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
                 }
             }
