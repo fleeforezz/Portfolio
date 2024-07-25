@@ -107,7 +107,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me/') {
+                    withDockerRegistry(credentialsId: '729be586-4e3e-45ce-9ace-bf1d85f2a6c3', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
