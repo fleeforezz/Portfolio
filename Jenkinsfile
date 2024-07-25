@@ -21,8 +21,9 @@ pipeline {
 
         // Docker info
         REGISTRY = "gitea.fleeforezz.me"
-        DOCKER_USER = "jso"
-        IMAGE_NAME = "${REGISTRY}" + "/" + "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        DOCKER_USER = "fleeforezz"
+        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        // IMAGE_NAME = "${REGISTRY}" + "/" + "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_RELEASE_TAG = "${RELEASE}-${BUILD_NUMBER}"
         IMAGE_LATEST_TAG = "latest"
         IMAGE_BETA_TAG = "beta"
