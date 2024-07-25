@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: portfolio
-        image: fleeforezz/portfolio
+        image: gitea.fleeforezz.me/jso/portfolio:latest
         ports:
         - containerPort: 9463
 
