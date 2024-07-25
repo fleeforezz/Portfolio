@@ -75,11 +75,11 @@ pipeline {
             }
         }
 
-        // stage('OWASP DP-SCAN') {
-        //     steps {
-        //         dependencyCheck additionalArguments: '', nvdCredentialsId: 'sonar-token', odcInstallation: 'owasp-dp-check'
-        //     }
-        // }
+        stage('OWASP DP-SCAN') {
+            steps {
+                dependencyCheck additionalArguments: '', nvdCredentialsId: 'NVD-API', odcInstallation: 'owasp-dp-check'
+            }
+        }
 
         stage('Trivy Filesystem Scan') {
             steps {
