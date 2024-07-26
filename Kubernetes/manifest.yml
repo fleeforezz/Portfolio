@@ -28,8 +28,12 @@ spec:
       containers:
       - name: portfolio
         image: gitea.fleeforezz.me/jso/portfolio:latest
+        resources:
+        limits:
+          memory: 100Mi
         ports:
         - containerPort: 9463
+      automountServiceAccountToken: false
 
 ---
 apiVersion: v1
