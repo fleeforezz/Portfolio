@@ -64,7 +64,6 @@ pipeline {
         //                 waitForQualityGate abortPipeline: true
         //             }
         //         }
-        //         sleep(10)
         //     }
         // }
         
@@ -106,7 +105,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me') {
+                    withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me/') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
