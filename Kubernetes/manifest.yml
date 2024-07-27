@@ -1,3 +1,4 @@
+# Persistent Volume
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -10,7 +11,7 @@ spec:
     requests:
       storage: 2000Mi
 
----
+# Deployment Object
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -35,7 +36,7 @@ spec:
         - containerPort: 9463
       # automountServiceAccountToken: false
 
----
+# Service Object
 apiVersion: v1
 kind: Service
 metadata:
