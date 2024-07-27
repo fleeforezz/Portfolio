@@ -34,7 +34,7 @@ spec:
           memory: 500Mi
         ports:
         - containerPort: 9463
-      # automountServiceAccountToken: false
+      automountServiceAccountToken: false
 
 # Service Object
 apiVersion: v1
