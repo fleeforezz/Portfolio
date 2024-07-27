@@ -1,15 +1,15 @@
 # Persistent Volume
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: Portfolio
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: longhorn
-  resources:
-    requests:
-      storage: 2000Mi
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: Portfolio
+# spec:
+#   accessModes:
+#     - ReadWriteMany
+#   storageClassName: longhorn
+#   resources:
+#     requests:
+#       storage: 2000Mi
 
 # Deployment Object
 apiVersion: apps/v1
