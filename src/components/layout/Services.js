@@ -88,8 +88,7 @@ export default function Services() {
                     <h3>Design-Infrastructure</h3>
                     <h3>Create pipeline</h3>
                     <h3>Web development</h3>
-                    <h3>Interact with-Server</h3>
-                    <h3></h3>
+                    <h3>Interact with-server</h3>
                 </motion.div>
 
                 <div>
@@ -118,7 +117,7 @@ export default function Services() {
                     <h3>GitLab</h3>
                     <h3>Jenkins</h3>
                     <h3>Grafana</h3>
-                    <>Ansible</>
+                    <h3>Ansible</h3>
                     {/* <h3>HTML</h3> */}
                     {/* <h3>CSS</h3> */}
                     {/* <h3>Javascript</h3> */}

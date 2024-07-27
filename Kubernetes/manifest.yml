@@ -1,14 +1,14 @@
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: Portfolio
-# spec:
-#   accessModes:
-#     - ReadWriteMany
-#   storageClassName: longhorn
-#   resources:
-#     requests:
-#       storage: 2000Mi
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: Portfolio
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 2000Mi
 
 ---
 apiVersion: apps/v1
@@ -30,10 +30,10 @@ spec:
         image: gitea.fleeforezz.me/jso/portfolio:latest
         resources:
         limits:
-          memory: 100Mi
+          memory: 500Mi
         ports:
         - containerPort: 9463
-      automountServiceAccountToken: false
+      # automountServiceAccountToken: false
 
 ---
 apiVersion: v1
