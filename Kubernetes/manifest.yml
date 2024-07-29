@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: portfolio
-        image: gitea.fleeforezz.me/jso/portfolio:latest
+        image: fleeforezz/portfolio
         resources:
         limits:
           memory: 500Mi

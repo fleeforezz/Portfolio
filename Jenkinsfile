@@ -20,9 +20,8 @@ pipeline {
         SONAR_HOST_URL = "https://sonarqube.fleeforezz.me"
 
         // Docker info
-        REGISTRY = "gitea.fleeforezz.me"
-        DOCKER_USER = "jso"
-        IMAGE_NAME = "${REGISTRY}" + "/" + "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        DOCKER_USER = "fleeforezz"
+        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_RELEASE_TAG = "${RELEASE}-${BUILD_NUMBER}"
         IMAGE_LATEST_TAG = "latest"
         IMAGE_BETA_TAG = "beta"
@@ -105,7 +104,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Gitea_Registry', toolName: 'Docker', url: 'https://gitea.fleeforezz.me/') {
+                    withDockerRegistry(credentialsId: 'Docker-Registry', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
                         echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
                         sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
                     }
