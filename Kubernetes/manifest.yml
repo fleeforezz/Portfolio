@@ -44,7 +44,7 @@ spec:
         ports:
         - containerPort: 9463
       volumes:
-      - name: porfolio-storage
+      - name: portfolio-storage
         persistentVolumeClaim:
           claimName: portfolio-pvc
       automountServiceAccountToken: false
