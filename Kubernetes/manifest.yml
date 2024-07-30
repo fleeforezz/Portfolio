@@ -31,8 +31,12 @@ spec:
       - name: portfolio
         image: fleeforezz/portfolio
         resources:
-        limits:
-          memory: 500Mi
+          limits:
+            cpu: "1000m"
+            memory: "1000Mi"
+          request:
+            cpu: "500m"
+            memory: "750mi"
         ports:
         - containerPort: 9463
       automountServiceAccountToken: false
