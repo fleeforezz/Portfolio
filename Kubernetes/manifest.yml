@@ -34,9 +34,9 @@ spec:
           limits:
             cpu: "1000m"
             memory: "1000Mi"
-          request:
+          requests:
             cpu: "500m"
-            memory: "750mi"
+            memory: "750Mi"
         ports:
         - containerPort: 9463
       automountServiceAccountToken: false
