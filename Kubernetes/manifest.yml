@@ -1,15 +1,16 @@
-# Persistent Volume
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: Portfolio
-# spec:
-#   accessModes:
-#     - ReadWriteMany
-#   storageClassName: longhorn
-#   resources:
-#     requests:
-#       storage: 2000Mi
+---
+#Persistent Volume
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: portfolio-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 2Gi
 
 ---
 # Deployment Object
@@ -37,8 +38,15 @@ spec:
           requests:
             cpu: "500m"
             memory: "750Mi"
+        volumeMounts:
+        - mountPath: "/"
+          name: portfolio-storage
         ports:
         - containerPort: 9463
+      volumes:
+      - name: porfolio-storage
+        persistentVolumeClaim:
+          claimName: portfolio-pvc
       automountServiceAccountToken: false
 
 ---
