@@ -121,20 +121,20 @@ pipeline {
         //     }
         // }
         
-        stage('Deploy to Kubernetes') {
-            steps {
-                echo "####################### ${PURPLE}Deploy to Kubernetes${RESET_COLOR} #######################"
-                script {
-                    dir('Kubernetes') { 
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                            sh 'kubectl apply -f manifest.yml'
-                            sh 'kubectl get svc'
-                            sh 'kubectl get all'
-                        }
-                    }
-                }
-            }
-        }
+        // stage('Deploy to Kubernetes') {
+        //     steps {
+        //         echo "####################### ${PURPLE}Deploy to Kubernetes${RESET_COLOR} #######################"
+        //         script {
+        //             dir('Kubernetes') { 
+        //                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+        //                     sh 'kubectl apply -f manifest.yml'
+        //                     sh 'kubectl get svc'
+        //                     sh 'kubectl get all'
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
     
     post {
