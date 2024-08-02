@@ -24,7 +24,7 @@ docker-build:
     DOCKER_DRIVER: overlay2
     DOCKER_TLS_CERTDIR: ""
   before_script:
-    - echo $CI_REGISTRY
+    - echo $CI_REGISTRY_IMAGE
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
