@@ -1,7 +1,7 @@
 stages:
   - build
   - docker-build
-  - deploy
+  # - deploy
 
 build:
   stage: build
@@ -31,18 +31,18 @@ docker-build:
     - docker push "$CI_REGISTRY_IMAGE"
     - echo "Registry image:" $CI_REGISTRY_IMAGE
 
-deploy:
-  stage: deploy
-  image: kroniak/ssh-client
-  before_script:
-    - echo "deploying app"
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - eval "$(ssh-agent -s)" 
-    - ssh-add ~/.ssh/id_rsa
-    - ssh-keyscan $PROD_GAMMA_SERVER_IP -H  >> ~/.ssh/known_hosts
-  script:
-    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker stop portfolio || true && sudo docker rmi portfolio:latest || true && sudo docker rm portfolio || true"
-    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker pull fleeforezz/portfolio"
-    - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker run -p 9463:9463 --name portfolio -d --restart unless-stopped fleeforezz/portfolio"
+# deploy:
+#   stage: deploy
+#   image: kroniak/ssh-client
+#   before_script:
+#     - echo "deploying app"
+#     - mkdir -p ~/.ssh
+#     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+#     - chmod 600 ~/.ssh/id_rsa
+#     - eval "$(ssh-agent -s)" 
+#     - ssh-add ~/.ssh/id_rsa
+#     - ssh-keyscan $PROD_GAMMA_SERVER_IP -H  >> ~/.ssh/known_hosts
+#   script:
+#     - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker stop portfolio || true && sudo docker rmi portfolio:latest || true && sudo docker rm portfolio || true"
+#     - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker pull fleeforezz/portfolio"
+#     - ssh nhat@$PROD_GAMMA_SERVER_IP "sudo docker run -p 9463:9463 --name portfolio -d --restart unless-stopped fleeforezz/portfolio"
