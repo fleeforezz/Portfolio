@@ -16,8 +16,14 @@ RUN npm install
 # Copy the application code
 COPY . .
 
+# Build NodeJs app for production
+RUN npm run build
+
 # Stage 2: Create the final image
 FROM alpine:latest AS run
+
+# Install Node.js and npm
+# RUN apk add --no-cache nodejs npm
 
 # Set the working directory
 WORKDIR /app
