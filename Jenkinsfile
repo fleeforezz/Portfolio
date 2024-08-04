@@ -33,28 +33,28 @@ pipeline {
     }
 
     stages {
-        stage('Clean up WorkSpace') {
-            steps {
-                echo "####################### ${RED}Clean up WorkSpace${RESET_COLOR} #######################"
-                cleanWs()
-            }
-        }
+        // stage('Clean up WorkSpace') {
+        //     steps {
+        //         echo "####################### ${RED}Clean up WorkSpace${RESET_COLOR} #######################"
+        //         cleanWs()
+        //     }
+        // }
         
-        stage('Git Checkout') {
-            steps {
-                echo "####################### Git Checkout #######################"
-                git branch: 'main', url: "${GITHUB_URL}"
-            }
-        }
+        // stage('Git Checkout') {
+        //     steps {
+        //         echo "####################### Git Checkout #######################"
+        //         git branch: 'main', url: "${GITHUB_URL}"
+        //     }
+        // }
         
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonar-server') {
-                    echo "####################### ${BLUE}Sonar Scan${RESET_COLOR} #######################"
-                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Portfolio -Dsonar.projectKey=Portfolio -Dsonar.host.url=${SONAR_HOST_URL}"
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('sonar-server') {
+        //             echo "####################### ${BLUE}Sonar Scan${RESET_COLOR} #######################"
+        //             sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Portfolio -Dsonar.projectKey=Portfolio -Dsonar.host.url=${SONAR_HOST_URL}"
+        //         }
+        //     }
+        // }
         
         // stage('Quality Gate') {
         //     steps {
@@ -66,60 +66,60 @@ pipeline {
         //     }
         // }
         
-        stage('Node Build') {
-            steps {
-                echo "####################### ${GREEN}Node install and build${RESET_COLOR} #######################"
-                sh "npm install"
-                sh "npm run build"
-            }
-        }
-
-        stage('OWASP DP-SCAN') {
-            steps {
-                dependencyCheck additionalArguments: '', nvdCredentialsId: 'NVD-API', odcInstallation: 'owasp-dp-check'
-            }
-        }
-
-        stage('Trivy Filesystem Scan') {
-            steps {
-                echo "####################### ${YELLOW}Trivy Filesystem Scan${RESET_COLOR} #######################"
-                sh "trivy fs . > trivyfs.txt"
-            }
-        }
-        
-        stage('Docker Build') {
-            steps {
-                echo "####################### ${BLUE}Docker build${RESET_COLOR} #######################"
-                sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_LATEST_TAG} ."
-            }
-        }
-
-        stage('Trivy Docker Image Scan') {
-            steps {
-                echo "####################### ${YELLOW}Trivy Docker Image Scan${RESET_COLOR} #######################"
-                sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG} > trivyimage.txt"
-            }
-        }
-        
-        stage('Docker Push') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'Docker-Registry', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
-                        echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
-                        sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
-                    }
-                }
-            }
-        }
-        
-        // stage('Deploy to server') {
+        // stage('Node Build') {
         //     steps {
-        //         sshagent(['production-srv']) {
-        //             sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION}  'sudo docker stop ${APP_NAME} || true && sudo docker rm ${APP_NAME} || true'"
-        //             sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION} 'sudo docker run -p 9463:9463 -d --name ${APP_NAME} --restart unless-stopped ${IMAGE_NAME}'"
+        //         echo "####################### ${GREEN}Node install and build${RESET_COLOR} #######################"
+        //         sh "npm install"
+        //         sh "npm run build"
+        //     }
+        // }
+
+        // stage('OWASP DP-SCAN') {
+        //     steps {
+        //         dependencyCheck additionalArguments: '', nvdCredentialsId: 'NVD-API', odcInstallation: 'owasp-dp-check'
+        //     }
+        // }
+
+        // stage('Trivy Filesystem Scan') {
+        //     steps {
+        //         echo "####################### ${YELLOW}Trivy Filesystem Scan${RESET_COLOR} #######################"
+        //         sh "trivy fs . > trivyfs.txt"
+        //     }
+        // }
+        
+        // stage('Docker Build') {
+        //     steps {
+        //         echo "####################### ${BLUE}Docker build${RESET_COLOR} #######################"
+        //         sh "sudo docker build --pull -t ${IMAGE_NAME}:${IMAGE_LATEST_TAG} ."
+        //     }
+        // }
+
+        // stage('Trivy Docker Image Scan') {
+        //     steps {
+        //         echo "####################### ${YELLOW}Trivy Docker Image Scan${RESET_COLOR} #######################"
+        //         sh "trivy image --no-progress --exit-code 1 --severity HIGH,CRITICAL ${IMAGE_NAME}:${IMAGE_LATEST_TAG} > trivyimage.txt"
+        //     }
+        // }
+        
+        // stage('Docker Push') {
+        //     steps {
+        //         script {
+        //             withDockerRegistry(credentialsId: 'Docker-Registry', toolName: 'Docker', url: 'https://index.docker.io/v1/') {
+        //                 echo "####################### ${BLUE}Push Docker Image to Dockerhub Registry${RESET_COLOR} #######################"
+        //                 sh "sudo docker push ${IMAGE_NAME}:${IMAGE_LATEST_TAG}"
+        //             }
         //         }
         //     }
         // }
+        
+        stage('Deploy to server') {
+            steps {
+                sshagent(['production-srv']) {
+                    sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION}  'sudo docker stop ${APP_NAME} || true && sudo docker rm ${APP_NAME} || true'"
+                    sh "ssh -o StrictHostKeyChecking=no -l ${SERVER_CONNECTION} 'sudo docker run -p 9463:9463 -d --name ${APP_NAME} --restart unless-stopped ${IMAGE_NAME}'"
+                }
+            }
+        }
         
         // stage('Deploy to Kubernetes') {
         //     steps {
