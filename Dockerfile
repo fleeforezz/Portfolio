@@ -17,7 +17,7 @@ RUN npm install
 COPY . .
 
 # Stage 2: Create the final image
-FROM node:22.3.0-alpine3.19 AS run
+FROM alpine:latest AS run
 
 # Set the working directory
 WORKDIR /app
