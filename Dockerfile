@@ -1,5 +1,5 @@
 # Use node 18 alpine image as base
-FROM node:22.3.0-alpine3.19
+FROM node:22.3.0-alpine3.19 AS BUILD
 
 # Set local directory in docker
 WORKDIR /app
@@ -15,6 +15,10 @@ RUN npm install
 
 # Copy src file to docker
 COPY . .
+
+FROM alpine:latest
+
+COPY /app /app
 
 # Expose docker to port 9463
 EXPOSE 9463
