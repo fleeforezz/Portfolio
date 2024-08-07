@@ -1,35 +1,87 @@
 stages:
-  - build
-  - docker-build
-  # - deploy
+  - node_build
+  - security_scan
+  - docker_build
+  - deploy
+  - deploy_to_server
 
-build:
-  stage: build
-  image: node
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  APP_NAME: portfolio
+  IMAGE_TAG: latest
+  CI_REGISTRY_IMAGE: fleeforezz/$APP_NAME
+
+sonarqube-check:
+  stage: security_scan
+  image: 
+      name: sonarsource/sonar-scanner-cli:latest
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    policy: pull
+    key: "${CI_COMMIT_SHORT_SHA}"
+    paths:
+      - sonar-scanner/
   script: 
+    - sonar-scanner
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == 'master'
+    - if: $CI_COMMIT_BRANCH == 'main'
+    - if: $CI_COMMIT_BRANCH == 'develop'
+
+# sonarqube-vulnerability-report:
+#   stage: security_scan
+#   script:
+#     - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=jso_portfolio_95f490bc-9ca8-4a82-968e-ac3629a6ddf2&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
+#   allow_failure: true
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+#     - if: $CI_COMMIT_BRANCH == 'master'
+#     - if: $CI_COMMIT_BRANCH == 'main'
+#     - if: $CI_COMMIT_BRANCH == 'develop'
+#   artifacts:
+#     expire_in: 1 day
+#     reports:
+#       sast: gl-sast-sonar-report.json
+
+
+node-build:
+  stage: node_build
+  image: node:22.3.0-alpine3.19
+  script:
     - echo "Start building App"
     - npm install
     - npm run build
     - echo "Build successfully!"
 
-docker-build:
-  stage: docker-build
+trivy-check:
+  stage: security_scan
+  script:
+    - trivy fs --format table -o fileSystem.html .
+  tags:
+    - shell-runner
+
+docker_build:
+  stage: docker_build
   image: docker:latest
   services: 
-      - name: docker:dind 
-        entrypoint: ["env", "-u", "DOCKER_HOST"]
-        command: ["dockerd-entrypoint.sh"]
-  variables:
-    DOCKER_HOST: tcp://docker:2375/
-    DOCKER_DRIVER: overlay2
-    DOCKER_TLS_CERTDIR: ""
+    - name: docker:dind
+      entrypoint: ["env", "-u", "DOCKER_HOST"]
+      command: ["dockerd-entrypoint.sh"]
   before_script:
     - echo $CI_REGISTRY_IMAGE
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-    - echo "Registry image:" $CI_REGISTRY_IMAGE
+    - docker build --pull -t $CI_REGISTRY_IMAGE:$IMAGE_TAG .
+    - docker push $CI_REGISTRY_IMAGE:$IMAGE_TAG
+    - echo "Registry image:" $CI_REGISTRY_IMAGE:$IMAGE_TAG
+  after_script:
+  - docker image prune -af
 
 # deploy:
 #   stage: deploy
